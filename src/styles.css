@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: black;
+    color: #ffff;
+}
+
+.nav-item {
+    margin-left: 4rem;
+    font-size: medium;
+}
+
+.container {
+    margin-top: 3rem;
+}
+
+.col {
+    height: 50px;
+    margin-top: 0;
+    border: 1px solid #fff;
+}
