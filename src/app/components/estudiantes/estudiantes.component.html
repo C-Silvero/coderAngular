@@ -1,19 +1,28 @@
 
 
-<div class="container">
-    <div class="row" *ngFor="let estudiante of ESTUDIANTE">
 
-      <div class="col-6">
-        <img src="{{estudiante.img}}" alt="estudianteimg" width="50">
 
-         <span id="estudiantenombre">{{estudiante.nombre}} </span> 
-      </div>
-      <div class="col-4 text-center">
-        {{estudiante.apellido}}
-      </div>
-      <div class="col-2 text-center" [ngClass]="estudiante.calificacion - 3 <= 2 ? 'desaprobado' : 'aprobado' ">
+      <!-- <div class="col-2 text-center" [ngClass]="estudiante.calificacion - 3 <= 2 ? 'desaprobado' : 'aprobado' ">
         <span >
            <b>{{estudiante.calificacion}} </b> 
           </span>
       </div>
+<p>hola</p> -->
+
+<h2 class="text-center">Hermandades</h2>
+
+      <section class="container">
+        <h3>OOZMA KAPPA</h3>
+      <table class="table table-hover"> 
+        <tbody>
+        <tr class="table-success" *ngFor="let estudiante of ESTUDIANTE">
+          <th scope="row" ><img src="{{estudiante.img}}" alt=""></th>
+          <td >{{estudiante.nombre}} </td>
+          <td >{{estudiante.apellido}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <br><br><br><br>
      

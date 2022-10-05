@@ -1,0 +1,55 @@
+
+<section class="container">
+    <h3 class="text-center">Únete a MU</h3>
+    
+
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+
+      <!-- Nombre -->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nombre</label>
+          <!-- input nombre: si es inválido el formulario cambia la clase  -->
+          <input type="nombre" class="form-control" placeholder="Mike" 
+            [ngClass]="{'form-control': true, 'is-invalid': formulario.get('nombre')?.errors && formulario.get('nombre')?.touched}" formControlName="nombre"> 
+            <div id="nombreerror" class="form-text invalid"  *ngIf="formulario.get('nombre')?.errors?.['required'] && formulario.get('nombre')?.touched">El campo es obligatorio.</div>
+        </div>
+        
+        <!-- Apellido -->
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Apellido</label>
+            <input type="apellido" class="form-control" placeholder="Wazowski"  
+            [ngClass]="{'form-control': true, 'is-invalid': formulario.get('apellido')?.errors && formulario.get('apellido')?.touched}" formControlName="apellido">
+            <div id="nombreerror" class="form-text invalid"  *ngIf="formulario.get('apellido')?.errors?.['required'] && formulario.get('apellido')?.touched">El campo es obligatorio.</div> 
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3"> 
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" placeholder="tucorreo@gmail.com"  
+            [ngClass]="{'form-control': true, 'is-invalid': formulario.get('email')?.errors?.['pattern'] && formulario.get('email')?.touched}" formControlName="email">
+            <div id="nombreerror" class="form-text invalid" *ngIf="formulario.get('email')?.errors?.['pattern'] && formulario.get('email')?.touched" >El formato correo es inválido.</div>
+            <div id="emailHelp" class="form-text">No compartiremos tu correo con nadie.</div>
+          </div>
+
+          <!-- Habilidades -->
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Habilidades</label>
+            <input type="Apeliido" class="form-control" placeholder="Ej: Lanzallamas"   [ngClass]="{'form-control': true, 'is-invalid': formulario.get('habilidades')?.errors?.['required'] && formulario.get('habilidades')?.touched}" formControlName="habilidades"> 
+            <div id="nombreerror" class="form-text invalid" *ngIf="formulario.get('habilidades')?.errors?.['required'] && formulario.get('habilidades')?.touched" >Este campo es obligatorio.</div>
+          </div>
+
+          <!-- Constraseña -->
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control"  [ngClass]="{'form-control': true, 'is-invalid': formulario.get('password')?.errors?.['pattern'] && formulario.get('password')?.touched}" formControlName="password">
+          <div id="nombreerror" class="form-text invalid" *ngIf="formulario.get('password')?.errors?.['pattern'] && formulario.get('password')?.touched" >La constraseña debe tener al menos una mayúscula.</div> 
+      </div>
+       <!-- Enviar -->
+        <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Enviar</button>
+      </form>
+  </section>
+
+
+
+
+

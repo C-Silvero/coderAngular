@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+
 body {
-    background-color: black;
-    color: #ffff;
+    background-color: #ffff;
+    color: rgb(0, 158, 237);
+    font-family: 'Lato', sans-serif;
 }
 
 .nav-item {
@@ -27,4 +30,8 @@ body {
 .col-2 {
     /* border: 1px solid #fff; */
     margin-top: 1rem;
+}
+
+.btn-success {
+    background-color: rgba(32, 187, 32, 0.873);
 }

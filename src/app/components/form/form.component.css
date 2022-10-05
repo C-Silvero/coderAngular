@@ -1,0 +1,16 @@
+.container {
+    color: rgb(3, 65, 191);
+    letter-spacing: 0.03em ;
+} 
+
+input {
+    background-color: rgb(192, 248, 255);
+}
+
+#nombreerror {
+    color: red;
+}
+
+.form-control.is-invalid {
+    background-color: rgb(255, 186, 186);
+}

@@ -10,35 +10,42 @@ export class EstudiantesComponent implements OnInit {
 
   public ESTUDIANTE: Array<Estudiantes> = [
     {
-      img: './assets/usuarioh.webp',
-      nombre: 'Pedro',
-      apellido: 'Rodriguez',
+      img: './assets/mikew.png',
+      nombre: 'Mike',
+      apellido: 'Wazowski',
       calificacion: 7,
     },
     {
-      img: './assets/usuariof.webp',
-      nombre: 'Agustina',
-      apellido: 'Sanchez',
+      img: './assets/solli.png',
+      nombre: 'James .P',
+      apellido: 'Sullivan',
       calificacion: 6,
     },
     {
-      img: './assets/usuarioh.webp',
-      nombre: 'Lautaro' ,
-      apellido: 'Duhalde' ,
+      img: './assets/Terry_teri.webp',
+      nombre: 'Terri y Terry' ,
+      apellido: 'Perry',
       calificacion: 9 ,
     },
     {
-      img: './assets/usuariof.webp',
-      nombre: 'Emilia',
-      apellido: 'Figueredo',
+      img: './assets/Squishy.png',
+      nombre: 'Squishy',
+      apellido: 'Squibbles',
       calificacion: 10,
     },
     {
-      img: './assets/usuarioh.webp',
-      nombre: 'Luis',
-      apellido: 'Junior',
+      img: './assets/doncarlton.png',
+      nombre: 'Don',
+      apellido: 'Carlton',
       calificacion: 5,
     },
+    {
+      img: './assets/art.png',
+      nombre: 'Art',
+      apellido: '',
+      calificacion: 5,
+    },
+
 
   ];
 
