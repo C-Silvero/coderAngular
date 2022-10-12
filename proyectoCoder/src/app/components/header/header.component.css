@@ -1,0 +1,13 @@
+.bg-light {
+    background-color: #ffff;
+}
+
+.lista1 {
+    display: none;
+    list-style: none;
+    width: 100%;
+}
+
+a  {
+    margin-right: 4rem;
+}

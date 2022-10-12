@@ -1,0 +1,181 @@
+
+<section class="container">
+  <h1 class="text-center mb-4">Presentamos a nuestras Hermandades</h1>
+<div class="row"> 
+    <!-- HERMANDAD OK -->
+    <div class="col-md-6"> 
+        
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" id="table1">
+
+            <!-- Imagen estudiante -->
+            <ng-container matColumnDef="img">
+              <th mat-header-cell *matHeaderCellDef > ID </th>
+              <td mat-cell  *matCellDef="let element" id="id"><img src="{{element.img}}" alt=""> </td>
+            </ng-container>
+          
+            <!-- Nombre estudiante -->
+            <ng-container matColumnDef="nombre">
+              <th mat-header-cell *matHeaderCellDef> Nombre </th>
+              <td mat-cell  *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+          
+            <!--  Apellido estudiante -->
+            <ng-container matColumnDef="apellido">
+              <th mat-header-cell *matHeaderCellDef> Apellido </th>
+              <td mat-cell  *matCellDef="let element"> {{element.apellido}} </td>
+            </ng-container>
+          
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>   
+           
+        </div> 
+        <!-- HERMANDAD RUR -->
+        <div class="col-md-6"> 
+            <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8" id="table2">
+    
+                <!-- Imagen estudiante -->
+                <ng-container matColumnDef="img">
+                  <th mat-header-cell *matHeaderCellDef > ID </th>
+                  <td mat-cell  *matCellDef="let element" id="id"><img src="{{element.img}}" alt=""> </td>
+                </ng-container>
+              
+                <!-- Nombre estudiante -->
+                <ng-container matColumnDef="nombre">
+                  <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                  <td mat-cell  *matCellDef="let element"> {{element.nombre}} </td>
+                </ng-container>
+              
+                <!--  Apellido estudiante -->
+                <ng-container matColumnDef="apellido">
+                  <th mat-header-cell *matHeaderCellDef> Apellido </th>
+                  <td mat-cell  *matCellDef="let element"> {{element.apellido}} </td>
+                </ng-container>
+              
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>   
+               
+            </div> 
+            <!-- HERMANDAD HSS -->
+            <div class="col-md-6"> 
+                <table mat-table [dataSource]="dataSource3" class="mat-elevation-z8" id="table3">
+        
+                    <!-- Imagen estudiante -->
+                    <ng-container matColumnDef="img">
+                      <th mat-header-cell *matHeaderCellDef > ID </th>
+                      <td mat-cell  *matCellDef="let element" id="id"><img src="{{element.img}}" alt=""> </td>
+                    </ng-container>
+                  
+                    <!-- Nombre estudiante -->
+                    <ng-container matColumnDef="nombre">
+                      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                      <td mat-cell  *matCellDef="let element"> {{element.nombre}} </td>
+                    </ng-container>
+                  
+                    <!--  Apellido estudiante -->
+                    <ng-container matColumnDef="apellido">
+                      <th mat-header-cell *matHeaderCellDef> Apellido </th>
+                      <td mat-cell  *matCellDef="let element"> {{element.apellido}} </td>
+                    </ng-container>
+                  
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>   
+                   
+                </div> 
+                <!-- HERMANDAD JOX  -->
+                <div class="col-md-6"> 
+                    <table mat-table [dataSource]="dataSource4" class="mat-elevation-z8" id="table4">
+            
+                        <!-- Imagen estudiante -->
+                        <ng-container matColumnDef="img">
+                          <th mat-header-cell *matHeaderCellDef > ID </th>
+                          <td mat-cell  *matCellDef="let element" id="id"><img src="{{element.img}}" alt=""> </td>
+                        </ng-container>
+                      
+                        <!-- Nombre estudiante -->
+                        <ng-container matColumnDef="nombre">
+                          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                          <td mat-cell  *matCellDef="let element"> {{element.nombre}} </td>
+                        </ng-container>
+                      
+                        <!--  Apellido estudiante -->
+                        <ng-container matColumnDef="apellido">
+                          <th mat-header-cell *matHeaderCellDef> Apellido </th>
+                          <td mat-cell  *matCellDef="let element"> {{element.apellido}} </td>
+                        </ng-container>
+                      
+                      
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      </table>   
+                       
+                    </div>
+                     <!-- HERMANDAD EEK  -->
+                    <div class="col-md-6"> 
+                        <table mat-table [dataSource]="dataSource5" class="mat-elevation-z8" id="table5">
+                
+                            <!-- Imagen estudiante -->
+                            <ng-container matColumnDef="img">
+                              <th mat-header-cell *matHeaderCellDef > ID </th>
+                              <td mat-cell  *matCellDef="let element" id="id"><img src="{{element.img}}" alt=""> </td>
+                            </ng-container>
+                          
+                            <!-- Nombre estudiante -->
+                            <ng-container matColumnDef="nombre">
+                              <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                              <td mat-cell  *matCellDef="let element"> {{element.nombre}} </td>
+                            </ng-container>
+                          
+                            <!--  Apellido estudiante -->
+                            <ng-container matColumnDef="apellido">
+                              <th mat-header-cell *matHeaderCellDef> Apellido </th>
+                              <td mat-cell  *matCellDef="let element"> {{element.apellido}} </td>
+                            </ng-container>
+                          
+                          
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                          </table>   
+                           
+                        </div> 
+                        <!-- HERMANDAD PNK  -->
+                        <div class="col-md-6"> 
+                            <table mat-table [dataSource]="dataSource6" class="mat-elevation-z8" id="table6">
+                    
+                                <!-- Imagen estudiante -->
+                                <ng-container matColumnDef="img">
+                                  <th mat-header-cell *matHeaderCellDef > ID </th>
+                                  <td mat-cell  *matCellDef="let element" id="id"><img src="{{element.img}}" alt=""> </td>
+                                </ng-container>
+                              
+                                <!-- Nombre estudiante -->
+                                <ng-container matColumnDef="nombre">
+                                  <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                                  <td mat-cell  *matCellDef="let element"> {{element.nombre}} </td>
+                                </ng-container>
+                              
+                                <!--  Apellido estudiante -->
+                                <ng-container matColumnDef="apellido">
+                                  <th mat-header-cell *matHeaderCellDef> Apellido </th>
+                                  <td mat-cell  *matCellDef="let element"> {{element.apellido}} </td>
+                                </ng-container>
+                              
+                              
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                              </table>   
+                               
+                            </div> 
+            </div>
+
+    
+
+    
+
+    
+</section>

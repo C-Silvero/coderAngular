@@ -1,0 +1,18 @@
+<section class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let cursos of INSCRIPCION"> 
+    <mat-card>
+        <mat-card-title>{{cursos.nombre}}</mat-card-title>
+        <mat-card-subtitle>{{cursos.contenido}}</mat-card-subtitle>
+        <img mat-card-image src="{{cursos.img}}" alt="">
+        <mat-card-content>Fecha: {{cursos.fecha | date : 'dd/MM/YYYY'}}</mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Inscribirse</button>
+            <button mat-button>Compartir</button>
+        </mat-card-actions>
+    </mat-card>
+    </div>
+</div>
+    
+
+</section>
