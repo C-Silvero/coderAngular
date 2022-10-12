@@ -15,7 +15,7 @@ export class FormularioComponent implements OnInit {
     email: ['' , [Validators.pattern('^[^@]+@[^@]+\.[a-zA-Z]{2,3}$')]],
     habilidades: ['', [Validators.required]]
   })
-
+  
   constructor(
     private formBuilder: FormBuilder
   ) {}

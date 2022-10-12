@@ -11,7 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card'
 import {MatTableModule} from '@angular/material/table'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MatIconModule } from '@angular/material/icon'
+import { MatTooltipModule } from '@angular/material/tooltip'
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatTreeModule } from '@angular/material/tree'
 
 @NgModule({
   declarations: [
@@ -21,7 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FondoComponent,
     InscripcionesComponent,
     FormularioComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatToolbarModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent,HeaderComponent,FondoComponent,InscripcionesComponent,EstudiantesComponent, FormularioComponent]

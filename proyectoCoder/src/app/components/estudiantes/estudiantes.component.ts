@@ -66,7 +66,7 @@ export class EstudiantesComponent implements OnInit {
     {img: './assets/p6.png', nombre: 'Taylor', apellido: ' Holbrook ',},
   ]
 
-  dataSource: MatTableDataSource<OK> = new MatTableDataSource<OK>(this.ok)
+  dataSource = [...this.ok]
   dataSource2: MatTableDataSource<RUR> = new MatTableDataSource<OK>(this.rur)
   dataSource3: MatTableDataSource<HSS> = new MatTableDataSource<OK>(this.hss)
   dataSource5: MatTableDataSource<EEK> = new MatTableDataSource<OK>(this.eek)
@@ -75,12 +75,14 @@ export class EstudiantesComponent implements OnInit {
 
 
   // distribucion de la tabla
-  displayedColumns: string[] = ['img', 'nombre', 'apellido',];
+  displayedColumns: string[] = ['img', 'nombre', 'apellido', 'acciones'];
   
+
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
