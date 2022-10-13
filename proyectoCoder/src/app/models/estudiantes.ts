@@ -4,7 +4,7 @@ export interface OK
     img: string;
     nombre: string;
     apellido: string;
-    
+    capitan: boolean;
   }
 
   export interface RUR 
@@ -12,7 +12,7 @@ export interface OK
     img: string;
     nombre: string;
     apellido: string;
-    
+    capitan: boolean;
   }
 
   export interface HSS 
@@ -20,7 +20,7 @@ export interface OK
     img: string;
     nombre: string;
     apellido: string;
-    
+    capitan: boolean;
   }
 
   export interface JOX 
@@ -28,7 +28,7 @@ export interface OK
     img: string;
     nombre: string;
     apellido: string;
-    
+    capitan: boolean;
   }
 
   export interface PNK 
@@ -36,7 +36,7 @@ export interface OK
     img: string;
     nombre: string;
     apellido: string;
-    
+    capitan: boolean;
   }
 
   export interface EEK 
@@ -44,4 +44,5 @@ export interface OK
     img: string;
     nombre: string;
     apellido: string;
+    capitan: boolean;
   }

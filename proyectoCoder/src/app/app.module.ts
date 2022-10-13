@@ -14,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon'
 import { MatTooltipModule } from '@angular/material/tooltip'
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { MatTreeModule } from '@angular/material/tree'
+import { MatTreeModule } from '@angular/material/tree';
+import { BooleanPipe } from './pipes/boolean.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MatTreeModule } from '@angular/material/tree'
     FondoComponent,
     InscripcionesComponent,
     FormularioComponent,
+    BooleanPipe,
 
   ],
   imports: [

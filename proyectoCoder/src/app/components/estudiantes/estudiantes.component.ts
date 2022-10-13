@@ -13,57 +13,57 @@ export class EstudiantesComponent implements OnInit {
 
    ok : OK[] = [
     
-    {img: './assets/mikew.png', nombre: 'Mike', apellido: 'Wazowski',},
-    {img: './assets/solli.png', nombre: 'James .P', apellido: 'Sullivan',},
-    {img: './assets/Terry_teri.webp', nombre: 'Terry y Terri', apellido: 'Perry',},
-    {img: './assets/art.png', nombre: 'Art', apellido: '',},
-    {img: './assets/doncarlton.png', nombre: 'Don', apellido: 'Carlton',},
-    {img: './assets/Squishy.png', nombre: 'Scott', apellido: 'Squibbles',},
+    {img: './assets/mikew.png', nombre: 'Mike', apellido: 'Wazowski', capitan:false},
+    {img: './assets/solli.png', nombre: 'James .P', apellido: 'Sullivan', capitan:false},
+    {img: './assets/Terry_teri.webp', nombre: 'Terry y Terri', apellido: 'Perry', capitan:false},
+    {img: './assets/art.png', nombre: 'Art', apellido: '', capitan:false},
+    {img: './assets/doncarlton.png', nombre: 'Don', apellido: 'Carlton', capitan:true},
+    {img: './assets/Squishy.png', nombre: 'Scott', apellido: 'Squibbles', capitan:false},
   ]
 
   rur : RUR[] = [
-    {img: './assets/rur1.png', nombre: 'Johnny ', apellido: 'Worthignton III',},
-    {img: './assets/rur2.png', nombre: 'Randall', apellido: 'Boggs',},
-    {img: './assets/rur3.png', nombre: 'Chet', apellido: 'Alexander',},
-    {img: './assets/rur4.png', nombre: 'Reggie', apellido: 'Jacobs',},
-    {img: './assets/rur5.png', nombre: 'Javier', apellido: 'Ríos',},
-    {img: './assets/rur6.png', nombre: 'Chip', apellido: 'Golf',},
+    {img: './assets/rur1.png', nombre: 'Johnny ', apellido: 'Worthignton III', capitan:true},
+    {img: './assets/rur2.png', nombre: 'Randall', apellido: 'Boggs', capitan:false},
+    {img: './assets/rur3.png', nombre: 'Chet', apellido: 'Alexander', capitan:false},
+    {img: './assets/rur4.png', nombre: 'Reggie', apellido: 'Jacobs', capitan:false},
+    {img: './assets/rur5.png', nombre: 'Javier', apellido: 'Ríos', capitan:false},
+    {img: './assets/rur6.png', nombre: 'Chip', apellido: 'Golf', capitan:false},
   ]
 
   hss : HSS[] = [
-    {img: './assets/h1.png', nombre: 'Rosie ', apellido: 'Levin',},
-    {img: './assets/h2.png', nombre: 'Nadya', apellido: 'Petrov',},
-    {img: './assets/h3.png', nombre: 'Sonia', apellido: 'Lewis',},
-    {img: './assets/h4.png', nombre: 'Susan', apellido: 'Jensen',},
-    {img: './assets/h5.png', nombre: 'Rhonda', apellido: 'Boyd',},
-    {img: './assets/h6.png', nombre: 'Nancy', apellido: 'Kim',},
+    {img: './assets/h1.png', nombre: 'Rosie ', apellido: 'Levin', capitan:true},
+    {img: './assets/h2.png', nombre: 'Nadya', apellido: 'Petrov', capitan:false},
+    {img: './assets/h3.png', nombre: 'Sonia', apellido: 'Lewis', capitan:false},
+    {img: './assets/h4.png', nombre: 'Susan', apellido: 'Jensen', capitan:false},
+    {img: './assets/h5.png', nombre: 'Rhonda', apellido: 'Boyd', capitan:false},
+    {img: './assets/h6.png', nombre: 'Nancy', apellido: 'Kim', capitan:false},
   ]
 
   jox : JOX[] = [
-    {img: './assets/j1.png', nombre: 'George ', apellido: 'Anderson',},
-    {img: './assets/j2.png', nombre: 'Roy', apellido: 'O Growlahan',},
-    {img: './assets/j3.png', nombre: 'Baboso ', apellido: 'Goreleyu',},
-    {img: './assets/j4.png', nombre: 'Dick', apellido: 'Pratt',},
-    {img: './assets/j5.png', nombre: 'Omar', apellido: 'Harris',},
-    {img: './assets/j6.png', nombre: 'Percy', apellido: 'Boleslav',},
+    {img: './assets/j1.png', nombre: 'George ', apellido: 'Anderson', capitan:false},
+    {img: './assets/j2.png', nombre: 'Roy', apellido: 'O Growlahan', capitan:true},
+    {img: './assets/j3.png', nombre: 'Baboso ', apellido: 'Goreleyu', capitan:false},
+    {img: './assets/j4.png', nombre: 'Dick', apellido: 'Pratt', capitan:false},
+    {img: './assets/j5.png', nombre: 'Omar', apellido: 'Harris', capitan:false},
+    {img: './assets/j6.png', nombre: 'Percy', apellido: 'Boleslav', capitan:false},
   ]
 
   eek : EEK[] = [
-    {img: './assets/e1.png', nombre: 'Violet ', apellido: 'Steslicki',},
-    {img: './assets/e2.png', nombre: 'Donna ', apellido: 'Soohoo',},
-    {img: './assets/e3.png', nombre: 'Brynn ', apellido: 'Larson ',},
-    {img: './assets/e4.png', nombre: 'Maria ', apellido: 'Garcia',},
-    {img: './assets/e5.png', nombre: 'Carla ', apellido: 'Delgado',},
-    {img: './assets/e6.png', nombre: 'Debbie ', apellido: 'Gabler',},
+    {img: './assets/e1.png', nombre: 'Violet ', apellido: 'Steslicki', capitan:false},
+    {img: './assets/e2.png', nombre: 'Donna ', apellido: 'Soohoo', capitan:false},
+    {img: './assets/e3.png', nombre: 'Brynn ', apellido: 'Larson ', capitan:false},
+    {img: './assets/e4.png', nombre: 'Maria ', apellido: 'Garcia', capitan:false},
+    {img: './assets/e5.png', nombre: 'Carla ', apellido: 'Delgado', capitan:true},
+    {img: './assets/e6.png', nombre: 'Debbie ', apellido: 'Gabler', capitan:false},
   ]
 
   pnk : PNK [] = [
-    {img: './assets/p1.png', nombre: 'Carrie', apellido: 'Williams',},
-    {img: './assets/p2.png', nombre: 'Naomi ', apellido: 'Jackson ',},
-    {img: './assets/p3.png', nombre: 'Heather', apellido: ' Olson ',},
-    {img: './assets/p4.png', nombre: 'Crystal ', apellido: 'Du Bois',},
-    {img: './assets/p5.png', nombre: 'Britney  ', apellido: 'Davis ',},
-    {img: './assets/p6.png', nombre: 'Taylor', apellido: ' Holbrook ',},
+    {img: './assets/p1.png', nombre: 'Carrie', apellido: 'Williams', capitan:true},
+    {img: './assets/p2.png', nombre: 'Naomi ', apellido: 'Jackson ', capitan:false},
+    {img: './assets/p3.png', nombre: 'Heather', apellido: ' Olson ', capitan:false},
+    {img: './assets/p4.png', nombre: 'Crystal ', apellido: 'Du Bois', capitan:false},
+    {img: './assets/p5.png', nombre: 'Britney  ', apellido: 'Davis ', capitan:false},
+    {img: './assets/p6.png', nombre: 'Taylor', apellido: ' Holbrook ', capitan:false},
   ]
 
   dataSource = [...this.ok]
@@ -75,7 +75,7 @@ export class EstudiantesComponent implements OnInit {
 
 
   // distribucion de la tabla
-  displayedColumns: string[] = ['img', 'nombre', 'apellido', 'acciones'];
+  displayedColumns: string[] = ['img', 'nombre', 'apellido', 'capitan', 'acciones'];
   
 
 

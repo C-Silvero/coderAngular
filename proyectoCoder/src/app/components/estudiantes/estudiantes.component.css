@@ -41,6 +41,7 @@ table {
     margin-left: 20px;
 }
 
-a {
+.mat-icon {
     margin-left: 1.3rem;
+    cursor: pointer;
 }
