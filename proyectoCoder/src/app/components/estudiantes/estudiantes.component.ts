@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { OK, RUR, HSS, JOX, EEK, PNK} from 'src/app/models/estudiantes';
-
+import { MatTable } from '@angular/material/table';
 @Component({
   selector: 'app-estudiantes',
   templateUrl: './estudiantes.component.html',
@@ -13,12 +13,12 @@ export class EstudiantesComponent implements OnInit {
 
    ok : OK[] = [
     
-    {img: './assets/mikew.png', nombre: 'Mike', apellido: 'Wazowski', capitan:false},
+    { img: './assets/mikew.png', nombre: 'Mike', apellido: 'Wazowski', capitan:false},
     {img: './assets/solli.png', nombre: 'James .P', apellido: 'Sullivan', capitan:false},
-    {img: './assets/Terry_teri.webp', nombre: 'Terry y Terri', apellido: 'Perry', capitan:false},
+    { img: './assets/Terry_teri.webp', nombre: 'Terry y Terri', apellido: 'Perry', capitan:false},
     {img: './assets/art.png', nombre: 'Art', apellido: '', capitan:false},
-    {img: './assets/doncarlton.png', nombre: 'Don', apellido: 'Carlton', capitan:true},
-    {img: './assets/Squishy.png', nombre: 'Scott', apellido: 'Squibbles', capitan:false},
+    { img: './assets/doncarlton.png', nombre: 'Don', apellido: 'Carlton', capitan:true},
+    { img: './assets/Squishy.png', nombre: 'Scott', apellido: 'Squibbles', capitan:false},
   ]
 
   rur : RUR[] = [
@@ -66,23 +66,28 @@ export class EstudiantesComponent implements OnInit {
     {img: './assets/p6.png', nombre: 'Taylor', apellido: ' Holbrook ', capitan:false},
   ]
 
-  dataSource = [...this.ok]
-  dataSource2: MatTableDataSource<RUR> = new MatTableDataSource<OK>(this.rur)
-  dataSource3: MatTableDataSource<HSS> = new MatTableDataSource<OK>(this.hss)
-  dataSource5: MatTableDataSource<EEK> = new MatTableDataSource<OK>(this.eek)
-  dataSource4: MatTableDataSource<JOX> = new MatTableDataSource<OK>(this.jox)
-  dataSource6: MatTableDataSource<PNK> = new MatTableDataSource<OK>(this.pnk)
+  dataSource= [...this.ok]
+  dataSource2= [...this.rur]
+  dataSource3: MatTableDataSource<HSS> = new MatTableDataSource<HSS>(this.hss)
+  dataSource5: MatTableDataSource<EEK> = new MatTableDataSource<EEK>(this.eek)
+  dataSource4: MatTableDataSource<JOX> = new MatTableDataSource<JOX>(this.jox)
+  dataSource6: MatTableDataSource<PNK> = new MatTableDataSource<PNK>(this.pnk)
 
 
   // distribucion de la tabla
   displayedColumns: string[] = ['img', 'nombre', 'apellido', 'capitan', 'acciones'];
   
 
+  @ViewChild(MatTable) table!: MatTable<OK>;
 
   constructor() { }
 
   ngOnInit(): void {
-    
+  }
+
+  removeData(index:number) {
+    this.dataSource.splice(index,1);
+    this.table.renderRows();
   }
 
 }

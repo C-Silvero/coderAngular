@@ -1,6 +1,5 @@
 export interface OK
   { 
-    
     img: string;
     nombre: string;
     apellido: string;
