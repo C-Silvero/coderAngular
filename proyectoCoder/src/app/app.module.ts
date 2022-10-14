@@ -16,7 +16,9 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
 import { BooleanPipe } from './pipes/boolean.pipe';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { BuscarcursoPipe } from './pipes/buscarcurso.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { BooleanPipe } from './pipes/boolean.pipe';
     InscripcionesComponent,
     FormularioComponent,
     BooleanPipe,
+    BuscarcursoPipe,
 
   ],
   imports: [
@@ -39,7 +42,9 @@ import { BooleanPipe } from './pipes/boolean.pipe';
     MatIconModule,
     MatTooltipModule,
     MatToolbarModule,
-    MatTreeModule
+    MatTreeModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent,HeaderComponent,FondoComponent,InscripcionesComponent,EstudiantesComponent, FormularioComponent]

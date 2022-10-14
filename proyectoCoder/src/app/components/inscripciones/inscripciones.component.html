@@ -1,6 +1,16 @@
+<br>
+<br>
 <section class="container">
+    
     <div class="row">
-        <div class="col-md-3" *ngFor="let cursos of INSCRIPCION"> 
+        <mat-form-field class="col-md-6">
+            <mat-label>Filtrar por nombre del curso</mat-label>
+            <input type="text" matInput [(ngModel)]="filtro">
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" *ngFor="let cursos of inscripcion | buscarcurso: filtro"> 
     <mat-card>
         <mat-card-title>{{cursos.nombre}}</mat-card-title>
         <mat-card-subtitle>{{cursos.contenido}}</mat-card-subtitle>

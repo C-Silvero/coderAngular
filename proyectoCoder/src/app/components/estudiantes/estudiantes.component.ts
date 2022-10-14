@@ -89,5 +89,5 @@ export class EstudiantesComponent implements OnInit {
     this.dataSource.splice(index,1);
     this.table.renderRows();
   }
-
+  
 }
