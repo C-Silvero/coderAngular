@@ -45,3 +45,10 @@ export interface OK
     apellido: string;
     capitan: boolean;
   }
+
+  export interface Usuario 
+  { 
+    usuario: string;
+    nombre: string;
+    apellido: string;
+  }

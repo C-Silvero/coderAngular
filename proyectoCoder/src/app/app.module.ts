@@ -19,6 +19,10 @@ import { BooleanPipe } from './pipes/boolean.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BuscarcursoPipe } from './pipes/buscarcurso.pipe'
+ import {  MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,8 @@ import { BuscarcursoPipe } from './pipes/buscarcurso.pipe'
     FormularioComponent,
     BooleanPipe,
     BuscarcursoPipe,
-
+    DialogComponent,
+    CrearUsuarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,9 @@ import { BuscarcursoPipe } from './pipes/buscarcurso.pipe'
     MatToolbarModule,
     MatTreeModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent,HeaderComponent,FondoComponent,InscripcionesComponent,EstudiantesComponent, FormularioComponent]

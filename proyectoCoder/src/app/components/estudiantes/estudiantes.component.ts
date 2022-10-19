@@ -1,15 +1,30 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { OK, RUR, HSS, JOX, EEK, PNK} from 'src/app/models/estudiantes';
+import { OK, RUR, HSS, JOX, EEK, PNK, Usuario} from 'src/app/models/estudiantes';
 import { MatTable } from '@angular/material/table';
+// import { MatDialog, MatDialogRef, } from '@angular/material/dialog';
+// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+// import { Dialog } from '@angular/cdk/dialog';
+// import { DialogComponent } from '../dialog/dialog.component';
+
+export interface DialogData {
+  name: string;
+  apellido: string;
+}
+
 @Component({
   selector: 'app-estudiantes',
   templateUrl: './estudiantes.component.html',
   styleUrls: ['./estudiantes.component.css']
 })
 export class EstudiantesComponent implements OnInit {
-
+  name!: string;
+  apellido!: string;
   // hermandades
+
+  usuario: Usuario[] = [
+    {usuario: '', nombre: '', apellido: ''}
+  ]
 
    ok : OK[] = [
     
@@ -68,10 +83,11 @@ export class EstudiantesComponent implements OnInit {
 
   dataSource= [...this.ok]
   dataSource2= [...this.rur]
-  dataSource3: MatTableDataSource<HSS> = new MatTableDataSource<HSS>(this.hss)
+  dataSource3= [...this.hss]
   dataSource5: MatTableDataSource<EEK> = new MatTableDataSource<EEK>(this.eek)
   dataSource4: MatTableDataSource<JOX> = new MatTableDataSource<JOX>(this.jox)
   dataSource6: MatTableDataSource<PNK> = new MatTableDataSource<PNK>(this.pnk)
+  
 
 
   // distribucion de la tabla
@@ -80,14 +96,27 @@ export class EstudiantesComponent implements OnInit {
 
   @ViewChild(MatTable) table!: MatTable<OK>;
 
-  constructor() { }
+  
 
+  constructor( 
+    
+  ) { }
+  
   ngOnInit(): void {
   }
+
+
+ 
+
 
   removeData(index:number) {
     this.dataSource.splice(index,1);
     this.table.renderRows();
   }
+  
+  agregarUsuario( usuario: Usuario) {
+    this.usuario.unshift(usuario)
+  }
+
   
 }

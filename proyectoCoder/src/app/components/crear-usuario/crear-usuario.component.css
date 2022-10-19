@@ -1,0 +1,23 @@
+.container {
+    margin-top: 10rem;
+}
+
+.ancho {
+    width: 80%;
+}
+
+table {
+    width: 70%;
+    margin-top: 4rem;
+    background-color: rgb(195, 195, 195);
+  }
+
+  #id {
+    padding-left: 0;
+    margin-left: 20px;
+}
+
+.mat-icon {
+    margin-left: 1.3rem;
+    cursor: pointer;
+}
