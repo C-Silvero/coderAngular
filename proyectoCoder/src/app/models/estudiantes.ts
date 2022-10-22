@@ -1,3 +1,10 @@
+export interface Estudiante
+  { 
+    img: string;
+    nombre: string;
+    apellido: string;
+  }
+
 export interface OK
   { 
     img: string;

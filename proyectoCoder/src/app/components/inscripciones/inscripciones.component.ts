@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Inscripciones } from 'src/app/models/inscripciones'
+import { CursoService } from 'src/app/services/curso.service';
 
 @Component({
   selector: 'app-inscripciones',
@@ -10,14 +12,33 @@ export class InscripcionesComponent implements OnInit {
 
   filtro : string = '';
 
-  public inscripcion  : Array<Inscripciones> = [  
-    { img: './assets/examenfinal.jpg', nombre: 'Examen Final', fecha: new Date(2022, 8, 12), contenido: 'Obten tu certificado de asustador' },
-    { img: './assets/puertas.jpg', nombre: 'Construcción de puertas', fecha: new Date(2022, 7, 9), contenido: 'Fabrica puertas al mundo humano'  },
-    { img: './assets/sustolimpiadas.jpg', nombre: 'Sustolimpiadas',  fecha: new Date(2022, 1, 2), contenido: 'Participa con tu equipo en los Juegos' },
-    { img: './assets/gimnasio.jpg', nombre: 'Gimnasio', fecha: new Date(2022, 2, 1), contenido: 'Entrenáte para potenciar tu fuerza' },
-]
+  cursos! : Inscripciones[];
+  cursosObservable!: Observable<Inscripciones[]>
 
-  constructor() { }
+  constructor(
+    private cursoService: CursoService
+  ) { 
+    console.log('paso 1');
+
+    cursoService.obtenerCursosPromise().then( (valor : Inscripciones[]) => {
+      this.cursos = valor;
+      console.log(valor);
+          }).catch( (error: any) => {
+              console.log(error);
+      })
+    // cursoService.obtenerCursosObservable().subscribe( {
+    //   next: ( cursos: Inscripciones[]) => {
+    //     this.cursos = cursos;
+    //     console.log('next', cursos );
+        
+    //   }, 
+    //   error: (e) => {
+    //     console.log(e);        
+    //   }
+    // })
+      this.cursosObservable = cursoService.obtenerCursosObservable()
+
+  }
   
   ngOnInit(): void {
   }

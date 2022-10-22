@@ -45,3 +45,9 @@ table {
     margin-left: 1.3rem;
     cursor: pointer;
 }
+
+@media (max-width: 700px) { 
+    table {
+        width: 100%;
+    }
+ }

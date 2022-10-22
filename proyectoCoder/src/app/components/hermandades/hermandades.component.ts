@@ -13,11 +13,11 @@ export interface DialogData {
 }
 
 @Component({
-  selector: 'app-estudiantes',
-  templateUrl: './estudiantes.component.html',
-  styleUrls: ['./estudiantes.component.css']
+  selector: 'app-hermandades',
+  templateUrl: './hermandades.component.html',
+  styleUrls: ['./hermandades.component.css']
 })
-export class EstudiantesComponent implements OnInit {
+export class HermandadesComponent implements OnInit {
   name!: string;
   apellido!: string;
   // hermandades

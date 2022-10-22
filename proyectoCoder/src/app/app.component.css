@@ -1,0 +1,30 @@
+a  {
+    margin-right: 4rem;
+}
+.navbar:hover {
+    color: rgb(75, 132, 255);
+}
+ .example-spacer {
+    flex: 1 1 auto;
+  } 
+
+  #logo {
+    cursor: pointer;
+    margin: 0;
+  }
+
+  @media (max-width: 700px) { 
+     button {
+        font-size: 10px;
+        margin: 0;
+    }
+    a {
+       margin-right: 0;
+      }
+    .example-spacer {
+        display: none;
+    }
+    #logo {
+        width: 40px;
+    }
+ }

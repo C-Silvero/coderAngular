@@ -1,14 +1,22 @@
-<!-- header -->
-<app-header></app-header>
-<!-- fondo -->
-<app-fondo></app-fondo>
-<!-- incripciones -->
-<app-inscripciones></app-inscripciones>
+<header> 
+    <mat-toolbar>
+      <span><img src="./assets/monsters-university.png" alt="" width="80" routerLink="inicio" id="logo"></span>
+      <span class="example-spacer"></span>
+      <button mat-button class="navbar" routerLink="inicio">Inicio</button>
+      <button mat-button class="navbar" routerLink="inscripciones">Inscripciones</button>
+      <button mat-button class="navbar" routerLink="estudiantes">Hermandades</button>
+      <button mat-button class="navbar" routerLink="crearusuario">Admin</button>
+      <button mat-button class="navbar" routerLink="formulario">Contacto</button>
+      <button mat-button class="navbar">Store</button>
+      <span class="example-spacer"></span>
+      
+      <!-- <button mat-button class="navbar" routerLink="inscripciones">Hermandades</button> -->
+      <!-- <button mat-button routerLink="/dashboard">LogOut</button> -->
+      <button mat-icon-button class="example-icon" routerLink="/" aria-label="Example icon-button with menu icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
 
-<app-crear-usuario></app-crear-usuario>
-<!-- hermandades -->
-<app-estudiantes></app-estudiantes>
-<!-- <app-dialog></app-dialog> -->
-<!-- formulario -->
-<app-formulario></app-formulario>
+</header>
+<router-outlet></router-outlet>
 
