@@ -6,16 +6,18 @@ import { HermandadesComponent } from "./components/hermandades/hermandades.compo
 import { FondoComponent } from "./components/fondo/fondo.component";
 import { FormularioComponent } from "./components/formulario/formulario.component";
 import { InscripcionesComponent } from "./components/inscripciones/inscripciones.component";
+import { EstudiantesComponent } from "./components/estudiantes/estudiantes.component";
 
 
 const rutas: Routes = [
     { path: 'inicio' , component: FondoComponent},
-    { path: 'iniciohijos', children: [
-        {path: 'fondo', component: FondoComponent}
-    ] },
+    // { path: 'iniciohijos', children: [
+    //     {path: 'fondo', component: FondoComponent}
+    // ] },
     { path: '', redirectTo: 'inicio', pathMatch: 'full'},
     { path: 'inscripciones', component: InscripcionesComponent},
-    { path: 'estudiantes', component: HermandadesComponent},
+    { path: 'hermandades', component: HermandadesComponent},
+    { path: 'estudiantes', component: EstudiantesComponent},
     { path: 'formulario', component: FormularioComponent},
     { path: 'crearusuario', component: CrearUsuarioComponent}
 ]

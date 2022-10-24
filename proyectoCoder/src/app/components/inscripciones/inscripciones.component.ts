@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { filter, from, Observable } from 'rxjs';
 import { Inscripciones } from 'src/app/models/inscripciones'
 import { CursoService } from 'src/app/services/curso.service';
 
@@ -8,17 +8,18 @@ import { CursoService } from 'src/app/services/curso.service';
   templateUrl: './inscripciones.component.html',
   styleUrls: ['./inscripciones.component.css']
 })
-export class InscripcionesComponent implements OnInit {
+export class InscripcionesComponent implements OnInit, OnDestroy {
 
   filtro : string = '';
 
   cursos! : Inscripciones[];
-  cursosObservable!: Observable<Inscripciones[]>
+  cursosObservable!: Observable<Inscripciones[]>;
+  suscripcion: any;
 
   constructor(
     private cursoService: CursoService
   ) { 
-    console.log('paso 1');
+    console.log('cursos works');
 
     cursoService.obtenerCursosPromise().then( (valor : Inscripciones[]) => {
       this.cursos = valor;
@@ -26,21 +27,31 @@ export class InscripcionesComponent implements OnInit {
           }).catch( (error: any) => {
               console.log(error);
       })
-    // cursoService.obtenerCursosObservable().subscribe( {
-    //   next: ( cursos: Inscripciones[]) => {
-    //     this.cursos = cursos;
-    //     console.log('next', cursos );
+     this.suscripcion = cursoService.obtenerCursosObservable().subscribe( {
+       next: ( cursos: Inscripciones[]) => {
+         this.cursos = cursos;
+         console.log('next', cursos );
         
-    //   }, 
-    //   error: (e) => {
-    //     console.log(e);        
-    //   }
-    // })
+       }, 
+      error: (e) => {
+        console.log(e);        
+       }
+     })
       this.cursosObservable = cursoService.obtenerCursosObservable()
 
   }
   
   ngOnInit(): void {
+    from(this.cursos).pipe(
+      filter((cursos : Inscripciones ) => cursos.nombre === 'Gimnasio' )
+    ) .subscribe((cursos) => {
+      console.log('from', cursos);
+    })
   }
+
+  ngOnDestroy(): void {
+    this.suscripcion.unsuscribe()
+  }
+  
 
 }

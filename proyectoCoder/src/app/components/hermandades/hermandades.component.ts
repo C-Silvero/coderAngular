@@ -23,7 +23,7 @@ export class HermandadesComponent implements OnInit {
   // hermandades
 
   usuario: Usuario[] = [
-    {usuario: '', nombre: '', apellido: ''}
+    {foto: '', nombre: '', apellido: ''}
   ]
 
    ok : OK[] = [

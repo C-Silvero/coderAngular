@@ -46,6 +46,13 @@ export class EstudiantesService {
   ]
 
 
-  
+  obtenerEstudiante(){
+    return this.estudiantes.slice()
+  }
   constructor() { }
+
+  eliminarEstudiante(index: number) {
+    this.estudiantes.splice(index, 1)
+  }
+
 }

@@ -1,19 +1,23 @@
 <section class="container"> 
     
     <mat-card >
-        <form action="" [formGroup]="form" (ngSubmit)="agregarUsuario()">
+        <form action="" [formGroup]="form">
+          <!-- <form action="" [formGroup]="form" (ngSubmit)="agregarUsuario()"></form> -->
             <mat-grid-list cols="4" rowHeight="80px">
                 <mat-grid-tile [colspan]="1" [rowspan]="1">
+
                     <mat-form-field appearance="fill" class="ancho">
-                        <mat-label>Usuario</mat-label>
-                        <input matInput formControlName="usuario">
+                        <mat-label>Foto</mat-label>
+                        <input matInput formControlName="foto">
                       </mat-form-field>
                 </mat-grid-tile>
+
                 <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
                     <mat-form-field appearance="fill" class="ancho">
                         <mat-label>Nombre</mat-label>
                         <input matInput formControlName="nombre">
                       </mat-form-field>
+
                 </mat-grid-tile>
                 <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
                     <mat-form-field appearance="fill" class="ancho">
@@ -30,18 +34,18 @@
         </form>
     </mat-card>
 
-    <div class="col-md-6"> 
+    <!-- <div class="col-md-6"> 
         
         <table mat-table [dataSource]="dataSource7" class="mat-elevation-z8" id="table1">
-          
+           -->
             <!-- Nombre estudiante -->
-            <ng-container matColumnDef="usuario">
-              <th mat-header-cell *matHeaderCellDef> Usuario </th>
-              <td mat-cell  *matCellDef="let element"> {{element.usuario}}  </td>
-            </ng-container>
+            <!-- <ng-container matColumnDef="foto">
+              <th mat-header-cell *matHeaderCellDef> Foto </th>
+              <td mat-cell  *matCellDef="let element"> {{element.foto}}  </td>
+            </ng-container> -->
           
             <!--  Apellido estudiante -->
-            <ng-container matColumnDef="nombre">
+            <!-- <ng-container matColumnDef="nombre">
               <th mat-header-cell *matHeaderCellDef> Nombre </th>
               <td mat-cell  *matCellDef="let element"> {{element.nombre}} </td>
             </ng-container>
@@ -49,10 +53,10 @@
             <ng-container matColumnDef="apellido">
               <th mat-header-cell *matHeaderCellDef> Apellido  </th>
               <td mat-cell  *matCellDef="let element" class="capitan"> {{element.apellido}} </td>
-            </ng-container>
+            </ng-container> -->
 
             
-            
+<!--             
 
           <ng-container matColumnDef="acciones">
             <th mat-header-cell *matHeaderCellDef> </th>
@@ -64,11 +68,11 @@
                     <mat-icon color="primary" matTooltip="Eliminar estudiante" (click)="removeData(i)"> delete </mat-icon> 
                       
                 </td>
-          </ng-container>
+          </ng-container> -->
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+          <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
           </table>   
-          </div>
+          </div> -->
 
 </section>

@@ -1,0 +1,36 @@
+img {
+    max-width: 70px;
+    max-height: 70px;
+}
+.img {
+    margin-right: 1.7rem;
+}
+.example-container {
+    height: 570px;
+    overflow: auto;
+    margin-top: 5rem;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-icon {
+    margin-left: 1.2rem;
+    cursor: pointer;
+}
+
+
+@media (max-width: 700px) { 
+    .mat-cell {
+        font-size: 12px;
+    }
+    table {
+        width: 100%;
+    }
+    .mat-icon {
+        margin-left: 0.2rem;
+        
+    }
+    
+ }

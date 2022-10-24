@@ -12,6 +12,7 @@ import { BuscarcursoPipe } from './pipes/buscarcurso.pipe'
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { MaterialModule} from './material.module';
 import { AppRoutingModule } from './app.routing.module';
+import { EstudiantesComponent } from './components/estudiantes/estudiantes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { AppRoutingModule } from './app.routing.module';
     BooleanPipe,
     BuscarcursoPipe,
     CrearUsuarioComponent,
+    EstudiantesComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,6 @@ import { AppRoutingModule } from './app.routing.module';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent,FondoComponent,InscripcionesComponent,HermandadesComponent, FormularioComponent]
+  bootstrap: [AppComponent,FondoComponent,InscripcionesComponent,HermandadesComponent, FormularioComponent, EstudiantesComponent]
 })
 export class AppModule { }
