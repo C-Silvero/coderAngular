@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/estudiantes';
+import { EstudiantesService } from 'src/app/services/estudiantes.service';
 
 @Component({
   selector: 'app-crear-usuario',
@@ -11,7 +13,7 @@ import { Usuario } from 'src/app/models/estudiantes';
 export class CrearUsuarioComponent implements OnInit {
 
   usuario: Usuario[] = [
-    {foto: '', nombre: '', apellido: ''}
+    {img: '', nombre: '', apellido: ''}
   ]
 
 
@@ -19,10 +21,11 @@ export class CrearUsuarioComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-    // private usuario: Usuario
+   private usuarioService: EstudiantesService,
+   private router: Router
   ) {
     this.form = this.fb.group({
-      foto: ['', Validators.required],
+      img: ['', Validators.required],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required]
     })
@@ -35,18 +38,16 @@ export class CrearUsuarioComponent implements OnInit {
   @ViewChild(MatTable) table!: MatTable<Usuario>;
 
   dataSource7= [...this.usuario]
-  displayedColumns2: string[] =['foto', 'nombre', 'apellido',]
+  displayedColumns2: string[] =['img', 'nombre', 'apellido',]
 
-    // agregarUsuario() {
-    //   this.dataSource7.push(this.form.value)
-    //   this.table.renderRows();
-    // }
-    
-
-    // removeData(index:number) {
-    //   this.dataSource7.splice(index,1);
-    //   this.table.renderRows();
-    // }
-    
+    agregarUsuario(){
+      const estudiante: Usuario = {
+        img : this.form.value.img,
+        nombre : this.form.value.nombre,
+        apellido : this.form.value.apellido,
+      }
+      this.usuarioService.agregarUsuario(estudiante)
+      this.router.navigate(['/estudiantes'])
+    }
 
 }

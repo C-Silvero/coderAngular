@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Estudiante } from '../models/estudiantes';
+import { Estudiante, Usuario } from '../models/estudiantes';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +53,10 @@ export class EstudiantesService {
 
   eliminarEstudiante(index: number) {
     this.estudiantes.splice(index, 1)
+  }
+
+  agregarUsuario( usuario : Usuario) {
+    this.estudiantes.unshift( usuario )
   }
 
 }

@@ -55,7 +55,7 @@ export interface OK
 
   export interface Usuario 
   { 
-    foto: string;
+    img: string;
     nombre: string;
     apellido: string;
   }
