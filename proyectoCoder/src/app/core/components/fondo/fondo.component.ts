@@ -11,5 +11,5 @@ export class FondoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }

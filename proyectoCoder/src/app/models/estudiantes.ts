@@ -1,5 +1,6 @@
 export interface Estudiante
   { 
+    id: number,
     img: string;
     nombre: string;
     apellido: string;
@@ -55,6 +56,7 @@ export interface OK
 
   export interface Usuario 
   { 
+    id: number;
     img: string;
     nombre: string;
     apellido: string;

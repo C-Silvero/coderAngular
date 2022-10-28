@@ -1,0 +1,19 @@
+#fondo {
+    margin-bottom: 50px;
+}
+
+#fondo:hover {
+    opacity: 1;
+}
+
+img {
+    width: 100%;
+}
+
+img:hover {
+    opacity: 0.76;
+}
+
+.mat-card {
+    margin: 0;
+}

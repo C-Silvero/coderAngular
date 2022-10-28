@@ -13,7 +13,7 @@ import { EstudiantesService } from 'src/app/services/estudiantes.service';
 export class CrearUsuarioComponent implements OnInit {
 
   usuario: Usuario[] = [
-    {img: '', nombre: '', apellido: ''}
+    {id: 37,  img: '', nombre: '', apellido: ''}
   ]
 
 
@@ -21,10 +21,12 @@ export class CrearUsuarioComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-   private usuarioService: EstudiantesService,
-   private router: Router
+    private usuarioService: EstudiantesService,
+    private router: Router,
   ) {
     this.form = this.fb.group({
+      // id debe ser mayor a estudiantes.lenght
+      id: [ , Validators.required],
       img: ['', Validators.required],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required]
@@ -38,10 +40,11 @@ export class CrearUsuarioComponent implements OnInit {
   @ViewChild(MatTable) table!: MatTable<Usuario>;
 
   dataSource7= [...this.usuario]
-  displayedColumns2: string[] =['img', 'nombre', 'apellido',]
+  displayedColumns2: string[] =[ 'id', 'img', 'nombre', 'apellido',]
 
     agregarUsuario(){
       const estudiante: Usuario = {
+        id: this.form.value.id,
         img : this.form.value.img,
         nombre : this.form.value.nombre,
         apellido : this.form.value.apellido,
@@ -50,4 +53,6 @@ export class CrearUsuarioComponent implements OnInit {
       this.router.navigate(['/estudiantes'])
     }
 
+
+    
 }

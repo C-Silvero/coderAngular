@@ -2,10 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { OK, RUR, HSS, JOX, EEK, PNK, Usuario} from 'src/app/models/estudiantes';
 import { MatTable } from '@angular/material/table';
-// import { MatDialog, MatDialogRef, } from '@angular/material/dialog';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { Dialog } from '@angular/cdk/dialog';
-// import { DialogComponent } from '../dialog/dialog.component';
+
 
 export interface DialogData {
   name: string;
@@ -22,9 +19,9 @@ export class HermandadesComponent implements OnInit {
   apellido!: string;
   // hermandades
 
-  usuario: Usuario[] = [
-    {img: '', nombre: '', apellido: ''}
-  ]
+  // usuario: Usuario[] = [
+  //   {img: '', nombre: '', apellido: ''}
+  // ]
 
    ok : OK[] = [
     
@@ -91,7 +88,7 @@ export class HermandadesComponent implements OnInit {
 
 
   // distribucion de la tabla
-  displayedColumns: string[] = ['img', 'nombre', 'apellido', 'capitan', 'acciones'];
+  displayedColumns: string[] = ['img', 'nombre', 'apellido', 'capitan'];
   
 
   @ViewChild(MatTable) table!: MatTable<OK>;
@@ -114,9 +111,9 @@ export class HermandadesComponent implements OnInit {
     this.table.renderRows();
   }
   
-  agregarUsuario( usuario: Usuario) {
-    this.usuario.unshift(usuario)
-  }
+  // agregarUsuario( usuario: Usuario) {
+  //   this.usuario.unshift(usuario)
+  // }
 
   
 }

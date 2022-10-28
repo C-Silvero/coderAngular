@@ -8,7 +8,7 @@ import { CursoService } from 'src/app/services/curso.service';
   templateUrl: './inscripciones.component.html',
   styleUrls: ['./inscripciones.component.css']
 })
-export class InscripcionesComponent implements OnInit, OnDestroy {
+export class InscripcionesComponent implements OnInit {
 
   filtro : string = '';
 
@@ -49,9 +49,9 @@ export class InscripcionesComponent implements OnInit, OnDestroy {
     })
   }
 
-  ngOnDestroy(): void {
-    this.suscripcion.unsuscribe()
-  }
+  //  ngOnDestroy(): void {
+  //    this.cursos.unsuscribe()
+  //  }
   
 
 }

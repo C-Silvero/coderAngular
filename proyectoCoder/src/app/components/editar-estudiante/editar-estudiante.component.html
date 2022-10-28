@@ -1,10 +1,7 @@
 <section class="container"> 
     
-    <h2 class="text-center"> Crear Usuario </h2>
-
     <mat-card >
-        <form action="" [formGroup]="form" (ngSubmit)="agregarUsuario()">
-          <!-- <form action="" [formGroup]="form" (ngSubmit)="agregarUsuario()"></form> -->
+        <form action="" [formGroup]="form" (ngSubmit)="editarEstudiante()">
             <mat-grid-list cols="5" rowHeight="80px">
                 <mat-grid-tile [colspan]="1" [rowspan]="1">
                     <mat-form-field appearance="fill" class="ancho">
@@ -43,3 +40,4 @@
     </mat-card>
 
 </section>
+
