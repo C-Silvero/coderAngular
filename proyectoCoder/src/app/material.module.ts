@@ -13,7 +13,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {  MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 @NgModule({
   declarations: [
    
@@ -31,7 +32,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule,
+    MatSlideToggleModule
+    
   ],
   exports: [
     MatButtonModule,
@@ -46,7 +50,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule,
+    MatSlideToggleModule
   ]
 })
 export class MaterialModule { }

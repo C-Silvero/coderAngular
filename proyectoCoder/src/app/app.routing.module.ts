@@ -1,28 +1,20 @@
 
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { CrearUsuarioComponent } from "./components/crear-usuario/crear-usuario.component";
-import { HermandadesComponent } from "./estudiantes/components/hermandades/hermandades.component";
-// import { FondoComponent } from "./components/fondo/fondo.component";
-import { FormularioComponent } from "./components/formulario/formulario.component";
-import { InscripcionesComponent } from "./components/inscripciones/inscripciones.component";
-import { EstudiantesComponent } from "./estudiantes/components/estudiantes/estudiantes.component";
+import { LoginComponent } from "./autenticacion/components/login/login.component";
 import { FondoComponent } from "./core/components/fondo/fondo.component";
-import { EditarEstudianteComponent } from "./components/editar-estudiante/editar-estudiante.component";
+import { ValidacionGuard } from "./core/guards/validacion.guard";
 
 
 const rutas: Routes = [
-    { path: 'inicio' , component: FondoComponent},
-    // { path: 'iniciohijos', children: [
-    //     {path: 'fondo', component: FondoComponent}
-    // ] },
-    { path: '', redirectTo: 'inicio', pathMatch: 'full'},
-    { path: 'inscripciones', component: InscripcionesComponent},
-    { path: 'hermandades', component: HermandadesComponent},
-    { path: 'estudiantes', component: EstudiantesComponent},
-    { path: 'formulario', component: FormularioComponent},
-    { path: 'crearusuario', component: CrearUsuarioComponent},
-    { path: 'editarestudiante', component: EditarEstudianteComponent}
+    {path: 'inicio', component: FondoComponent, canActivate: [ValidacionGuard]},
+    { path: 'login' , component: LoginComponent},
+    { path: 'cursos' , 
+      loadChildren: () => import('./cursos/cursos.module').then((m) => m.CursosModule)},
+    { path: 'autenticacion', loadChildren: () => import('./autenticacion/autenticacion.module').then((m) => m.AutenticacionModule)},
+    { path: 'estudiantes', loadChildren: () => import('./estudiantes/estudiantes.module').then((m) => m.EstudiantesModule )},
+    { path: '', redirectTo: 'inicio', pathMatch: 'full'}
+   
 ]
 
 @NgModule({

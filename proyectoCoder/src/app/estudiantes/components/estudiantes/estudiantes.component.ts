@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Estudiante } from 'src/app/models/estudiantes';
-import { EstudiantesService } from 'src/app/services/estudiantes.service';
+import { EstudiantesService } from '../../services/estudiantes.service';
 import Swal from 'sweetalert2'
 
 @Component({

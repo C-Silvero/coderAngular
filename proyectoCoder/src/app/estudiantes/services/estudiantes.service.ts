@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Estudiante, Usuario } from '../models/estudiantes';
+import { Estudiante, Usuario } from '../../models/estudiantes';
 
 @Injectable({
   providedIn: 'root'
@@ -66,7 +66,7 @@ export class EstudiantesService {
   }
 
   editarEstudiante(estudiante: Estudiante) {
-    let indice = this.estudiantes.findIndex((e: Estudiante) => e.id === estudiante.id);
+    let indice = this.estudiantes.findIndex((e: Estudiante) => e.id == estudiante.id);
       
     if ( indice > -1) {
       this.estudiantes[indice] = estudiante;

@@ -1,21 +1,42 @@
 <header> 
-    <mat-toolbar>
-      <span><img src="./assets/monsters-university.png" alt="" width="80" routerLink="inicio" id="logo"></span>
-      <span class="example-spacer"></span>
-      <button mat-button class="navbar" routerLink="inicio">Inicio</button>
-      <button mat-button class="navbar" routerLink="inscripciones">Inscripciones</button>
-      <button mat-button class="navbar" routerLink="hermandades">Hermandades</button>
-      <button mat-button class="navbar" routerLink="estudiantes">Estudiantes</button>
-      <button mat-button class="navbar" routerLink="crearusuario">Admin</button>
-      <button mat-button class="navbar" routerLink="formulario">Contacto</button>
-      <button mat-button class="navbar">Store</button>
-      <span class="example-spacer"></span>
-      
-      <!-- <button mat-button class="navbar" routerLink="inscripciones">Hermandades</button> -->
-      <!-- <button mat-button routerLink="/dashboard">LogOut</button> -->
-      <button mat-icon-button class="example-icon" routerLink="/" aria-label="Example icon-button with menu icon">
-        <mat-icon>logout</mat-icon>
-      </button>
-    </mat-toolbar>
-</header>
+  <mat-toolbar>
+    <span><img src="./assets/monsters-university.png" alt="" width="100" routerLink="inicio" id="logo"></span>
+     <span class="example-spacer"></span> 
 
+        <!-- inicio -->
+            <button mat-button class="navbar" routerLink="inicio">
+              <mat-icon matTooltip="INICIO">home</mat-icon>
+            </button>
+             
+            <!-- cursos -->
+            <button mat-button  [matMenuTriggerFor]="cursos" class="navbar"><mat-icon>computer</mat-icon> Cursos</button>
+            <mat-menu #cursos="matMenu" xPosition="after">
+              <button mat-menu-item routerLink="cursos">Inscribirse</button>
+              <button mat-menu-item routerLink="cursos/editarcurso">Editar cursos</button>
+              <button mat-menu-item routerLink="cursos/misincripciones">Mis inscripciones</button>
+              </mat-menu> 
+
+              <!-- crear, eliminar -->
+              <button mat-button [matMenuTriggerFor]="admin" class="navbar" matTooltip="USUARIOS"><mat-icon>swap_vert</mat-icon></button>
+              <mat-menu #admin="matMenu" xPosition="after">
+                 <button mat-menu-item routerLink="estudiantes/crearusuario">Crear usuario</button>
+                 <button mat-menu-item routerLink="estudiantes/editarestudiante">Editar usuario</button>
+           </mat-menu>
+  
+            <!-- estudiantes -->
+             <button mat-button [matMenuTriggerFor]="estudiantes" class="navbar" matTooltip="ESTUDIANTES" ><mat-icon>face</mat-icon></button>
+            <mat-menu #estudiantes="matMenu" xPosition="after">
+              <button mat-menu-item routerLink="estudiantes" routerLink="estudiantes">Estudiantes</button>
+              <button mat-menu-item routerLink="hermandades" routerLink="hermandades">Hermandades</button>
+              </mat-menu> 
+
+          <!-- <--  iniciar sesion, contacto -->
+     <button mat-button [matMenuTriggerFor]="settings" class="navbar" matTooltip="OPCIONES"><mat-icon>settings</mat-icon></button>
+           <mat-menu #settings="matMenu" xPosition="after">
+              <button mat-menu-item>Iniciar sesión</button>
+              <button mat-button class="navbar" routerLink="formulario">Contacto</button>
+        </mat-menu>
+
+      
+    </mat-toolbar>
+</header> 

@@ -8,7 +8,6 @@ import { FondoComponent } from './components/fondo/fondo.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent,
     FondoComponent
   ],
   imports: [

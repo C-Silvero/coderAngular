@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/estudiantes';
-import { EstudiantesService } from 'src/app/services/estudiantes.service';
+import { EstudiantesService } from "../../services/estudiantes.service";
 
 @Component({
   selector: 'app-crear-usuario',

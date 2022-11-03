@@ -1,0 +1,21 @@
+.container {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: end;
+}
+
+.mat-card {
+    width: 30%;
+}
+
+.ancho {
+    width: 100%;
+}
+.mat-slide-toggle{
+    margin-top: 2rem;
+}
+.btn {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}

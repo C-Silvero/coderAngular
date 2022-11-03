@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Estudiante, Usuario } from 'src/app/models/estudiantes';
-import { EstudiantesService } from 'src/app/services/estudiantes.service';
-
+import { EstudiantesService } from '../../services/estudiantes.service';
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-editar-estudiante',
   templateUrl: './editar-estudiante.component.html',
@@ -36,11 +36,14 @@ export class EditarEstudianteComponent implements OnInit {
         apellido: new FormControl (parametros.get('apellido'), [Validators.required])
       })
     })
+    console.log(this.form);
+    
   }
 
   
 
   editarEstudiante(){
+
     const estudiante: Estudiante = {
       id: this.form.value.id,
       img : this.form.value.img,
@@ -48,9 +51,16 @@ export class EditarEstudianteComponent implements OnInit {
       apellido : this.form.value.apellido,
     }
     console.log(estudiante);
-    
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Estudiante editado',
+      showConfirmButton: false,
+      timer: 1000
+    })
     this.estudianteService.editarEstudiante(estudiante)
     this.router.navigate(['/estudiantes'])
   }
+  
 
 }

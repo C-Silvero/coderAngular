@@ -1,0 +1,23 @@
+<br>
+<section class="container">
+    
+    <div class="row">
+        <div class="col-md-3" *ngFor="let curso of cursos$ | async"> 
+    <mat-card >
+        <mat-card-title >{{curso.nombre}}</mat-card-title>
+        <mat-card-subtitle>{{curso.contenido}}</mat-card-subtitle>
+        <img mat-card-image src="{{curso.img}}" alt="">
+        <mat-card-content>Fecha: {{curso.fecha }}</mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary">Inscribirse</button>
+            <button mat-button>Compartir 	<mat-icon id="share">share</mat-icon></button>
+            <button mat-icon-button color="primary" (click)="editarCurso(curso)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+    </div>
+</div>
+    
+
+</section>

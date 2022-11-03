@@ -1,6 +1,11 @@
-a  {
+/* a  {
     margin-right: 4rem;
+} */
+header {
+    width: 100%;
 }
+
+
 .navbar:hover {
     color: rgb(75, 132, 255);
 }
@@ -14,17 +19,20 @@ a  {
   }
 
   @media (max-width: 700px) { 
-     button {
+    
+
+    button {
         font-size: 10px;
-        margin: 0;
     }
-    a {
-       margin-right: 0;
-      }
-    .example-spacer {
-        display: none;
+    .navbar {
+        margin: 0;
+        padding: 0;
     }
     #logo {
-        width: 40px;
+        width: 50px;
+        margin-right: 0.2rem;
+    }
+    .mat-toolbar-single-row {
+        padding: 0;
     }
  }

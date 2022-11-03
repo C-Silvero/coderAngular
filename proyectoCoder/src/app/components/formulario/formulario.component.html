@@ -24,7 +24,7 @@
 
           <!-- Email -->
           <div class="mb-3"> 
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <label for="exampleInputEmail1" class="form-label">Email </label>
             <input type="email" class="form-control" placeholder="tucorreo@gmail.com"  
             [ngClass]="{'form-control': true, 'is-invalid': formulario.get('email')?.errors?.['pattern'] && formulario.get('email')?.touched}" formControlName="email">
             <div id="nombreerror" class="form-text invalid" *ngIf="formulario.get('email')?.errors?.['pattern'] && formulario.get('email')?.touched" >El formato correo es inválido.</div>
@@ -34,7 +34,7 @@
           <!-- Habilidades -->
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Habilidades</label>
-            <input type="Apeliido" class="form-control" placeholder="Ej: Lanzallamas"   [ngClass]="{'form-control': true, 'is-invalid': formulario.get('habilidades')?.errors?.['required'] && formulario.get('habilidades')?.touched}" formControlName="habilidades"> 
+            <input type="Apellido" class="form-control" placeholder="Ej: Lanzallamas"   [ngClass]="{'form-control': true, 'is-invalid': formulario.get('habilidades')?.errors?.['required'] && formulario.get('habilidades')?.touched}" formControlName="habilidades"> 
             <div id="nombreerror" class="form-text invalid" *ngIf="formulario.get('habilidades')?.errors?.['required'] && formulario.get('habilidades')?.touched" >Este campo es obligatorio.</div>
           </div>
 

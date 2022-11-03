@@ -1,0 +1,46 @@
+<section class="container">
+    <h3>Editar curso</h3>
+
+    <mat-card >
+        <form action="" [formGroup]="form" (ngSubmit)="editarCurso()">
+            <mat-grid-list cols="5" rowHeight="80px">
+            
+                
+                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-form-field appearance="fill" class="ancho">
+                        <mat-label>Imagen</mat-label>
+                        <input matInput formControlName="img">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
+                    <mat-form-field appearance="fill" class="ancho">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput formControlName="nombre">
+                      </mat-form-field>
+
+                </mat-grid-tile>
+                <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
+                    <mat-form-field appearance="fill" class="ancho">
+                        <mat-label>Contenido</mat-label>
+                        <input matInput formControlName="contenido">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
+                    <mat-form-field appearance="fill" class="ancho">
+                        <mat-label>Fecha</mat-label>
+                        <input matInput formControlName="fecha">
+                      </mat-form-field>
+                </mat-grid-tile>
+
+
+                <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Agregar</button>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        </form>
+    </mat-card>
+</section>
+

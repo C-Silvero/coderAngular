@@ -2,6 +2,13 @@ export interface Inscripciones
   { 
     img: string;
     nombre: string;
-    fecha: Date;
+    fecha: string;
     contenido: string;
+  }
+
+  export interface MisInscripciones
+   {
+    nombre: string;
+    fecha: Date;
+    acciones: string;
   }
