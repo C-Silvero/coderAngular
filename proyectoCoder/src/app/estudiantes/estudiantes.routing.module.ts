@@ -6,12 +6,12 @@ import { EstudiantesComponent } from './components/estudiantes/estudiantes.compo
 import { HermandadesComponent } from './components/hermandades/hermandades.component';
 
 const routes: Routes = [
-  { path: 'estudiantes', component: EstudiantesComponent, children: [
-    { path: 'hermandades', component: HermandadesComponent },
-    { path: 'crear', component: CrearUsuarioComponent },
-    { path: 'editar', component: EditarEstudianteComponent },
-  ]} 
-]; 
+  { path: '', component: EstudiantesComponent,},
+  { path: 'hermandades', component: HermandadesComponent },
+  { path: 'crear', component: CrearUsuarioComponent },
+  { path: 'editar', component: EditarEstudianteComponent },
+  ] 
+ 
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

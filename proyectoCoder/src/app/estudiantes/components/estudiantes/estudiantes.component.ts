@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { Estudiante } from 'src/app/models/estudiantes';
 import { EstudiantesService } from '../../services/estudiantes.service';
 import Swal from 'sweetalert2'
+import { Observable } from 'rxjs';
+import { Sesion } from 'src/app/models/sesion';
+import { SesionService } from 'src/app/core/services/sesion.service';
 
 @Component({
   selector: 'app-estudiantes',
@@ -11,6 +14,8 @@ import Swal from 'sweetalert2'
   styleUrls: ['./estudiantes.component.css']
 })
 export class EstudiantesComponent implements OnInit {
+
+  sesion$!: Observable<Sesion>
 
   listaEstudiantes: Estudiante[] = []
 
@@ -20,11 +25,13 @@ export class EstudiantesComponent implements OnInit {
 
   constructor(
     private estudianteService : EstudiantesService,
-    private router : Router
+    private router : Router,
+    private sesionService: SesionService
   )
    { }
 
   ngOnInit(): void {
+    this.sesion$ = this.sesionService.obtenerSesion()
     this.cargarEstudiantes()
   }
 
@@ -56,7 +63,7 @@ export class EstudiantesComponent implements OnInit {
   }
 
   editar( estudiante : Estudiante) {
-    this.router.navigate(['/editarestudiante', {
+    this.router.navigate(['estudiantes/editar', {
       id : estudiante.id,
       img: estudiante.img,
       nombre: estudiante.nombre,

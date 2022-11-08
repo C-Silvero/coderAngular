@@ -1,21 +1,60 @@
-.container {
-    margin-top: 10rem;
-    display: flex;
-    justify-content: end;
+body {
+    overflow: hidden;
+}
+
+img {
+    display: none;
+}
+
+.row {
+    min-height: 100vh;
+    background-image: url("../../../../assets/mon.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .mat-card {
-    width: 30%;
+    margin-top: 10rem;
+    width: 60%;
+    border-radius: 1px 10px 1px ;
 }
 
 .ancho {
     width: 100%;
 }
-.mat-slide-toggle{
-    margin-top: 2rem;
-}
+
 .btn {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
 }
+
+ .mat-raised-button {
+    background-color: rgb(41, 109, 255);
+} 
+
+
+@media (max-width: 780px) {
+
+    .row {
+        min-height: 100vh;
+        background-image: url("../../../../assets/mon.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+
+    .mat-card{
+        display: flex;
+        background: none;
+        height: 20%;
+        margin: 0;
+        width: 100%;
+        display: block;
+        padding: 0;
+    }
+    img {
+        display: none;
+    }
+ }
+

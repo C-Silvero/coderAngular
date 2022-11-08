@@ -54,7 +54,7 @@ export class EditarcursoComponent implements OnInit {
 
     this.cursoService.editarCurso(c);
 
-    this.routes.navigate(['inscripciones'])
+    this.routes.navigate(['cursos'])
    }
 
 

@@ -1,29 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HermandadesComponent } from './components/hermandades/hermandades.component';
-import { EstudiantesComponent } from './components/estudiantes/estudiantes.component';
-import { CoreModule } from '../core/core.module';
-import { BooleanPipe } from './pipes/boolean.pipe';
-import { EditarEstudianteComponent } from './components/editar-estudiante/editar-estudiante.component';
-import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
 
+import { SharedModule } from 'src/app/shared/shared.module';
+
+import { EstudiantesComponent } from './components/estudiantes/estudiantes.component';
+import { HermandadesComponent } from './components/hermandades/hermandades.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { EditarEstudianteComponent } from './components/editar-estudiante/editar-estudiante.component';
+import { EstudiantesRoutingModule } from './estudiantes.routing.module';
+import { BooleanPipe } from './pipes/boolean.pipe'
 
 
 @NgModule({
   declarations: [
-    EstudiantesComponent,
-    HermandadesComponent,
-    EditarEstudianteComponent,
-    CrearUsuarioComponent,
-    BooleanPipe,
+   EstudiantesComponent,
+   HermandadesComponent,
+   CrearUsuarioComponent,
+   EditarEstudianteComponent,
+   BooleanPipe
   ],
   imports: [
     CommonModule,
-    CoreModule,
-    ReactiveFormsModule,
-    SharedModule
-  ],
+    EstudiantesRoutingModule,
+    SharedModule,
+    
+  ]
 })
 export class EstudiantesModule { }

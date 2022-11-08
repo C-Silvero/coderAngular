@@ -1,8 +1,8 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, throwError } from 'rxjs';
-import { environment } from '../../../environments/environment';
-import { Inscripciones } from '../../models/inscripciones';
+import { environment } from '../../../environments/environment'
+import { Inscripciones } from '../../models/inscripciones'
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,7 @@ export class CursoService {
   constructor(
     private http : HttpClient
   ) {
-      // this.cursosObservable = new Observable<Inscripciones[]>((suscriptor) => {
-      //   suscriptor.next(this.cursos);
-      // })
+    
    }
 
    obtenerCursos(): Observable<Inscripciones[]> {
@@ -44,23 +42,5 @@ export class CursoService {
     return throwError(() => new Error('Error en la comunicacion HTTP'));
   }
 
-  //  obtenerCursosPromise(): Promise<Inscripciones[] | any> {
-  //    return new Promise ((resolve, reject) => {
-  //      if ( this.cursos.length > 0) {
-  //        resolve( this.cursos)
-  //      } else {
-  //        reject({
-  //          codigo: 0,
-  //          mensaje: 'No hay cursos disponibles'
-  //        })
-  //      }
-      
-  //    })
-  //  }
-  
-    // obtenerCursosObservable() {
-    //   return this.cursosObservable
-    //   return of(this.cursos)
-    // }
 
 }

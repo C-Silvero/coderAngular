@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" *ngIf="sesion$ | async as sesion">
 
     <section class="example-container mat-elevation-z8" tabindex="0">
         <table mat-table [dataSource]="dataSource">
@@ -26,10 +26,12 @@
             <th mat-header-cell *matHeaderCellDef> </th>
               <td mat-cell  *matCellDef="let element; let estudiante; let i = index"> 
                 
-                <mat-icon color="primary"  matTooltip="Editar estudiante" (click)="editar( estudiante )"> edit </mat-icon> 
+                
+
+                <mat-icon color="primary"  matTooltip="Editar estudiante"  *ngIf="sesion.usuarioActivo?.admin" (click)="editar( estudiante )"> edit </mat-icon> 
                   
                    
-                <mat-icon color="primary" matTooltip="Eliminar estudiante" (click)="removeData(i)"> delete </mat-icon> 
+                <mat-icon color="primary" matTooltip="Eliminar estudiante" *ngIf="sesion.usuarioActivo?.admin" (click)="removeData(i)"> delete </mat-icon> 
                         
                 </td>
 

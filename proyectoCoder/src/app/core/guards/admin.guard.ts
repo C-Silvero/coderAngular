@@ -7,9 +7,10 @@ import { SesionService } from '../services/sesion.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ValidacionGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
+export class AdminGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
 
-  constructor(
+
+  constructor (
     private sesion: SesionService,
     private routes: Router
   ) {
@@ -21,10 +22,11 @@ export class ValidacionGuard implements CanActivate, CanActivateChild, CanDeacti
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       return this.sesion.obtenerSesion().pipe(
         map((sesion : Sesion) => {
-          if(sesion.sesionActiva) {
+          if(sesion.usuarioActivo?.admin) {
             return true
           } else {
-            this.routes.navigate(['login'])
+            alert('error')
+            this.routes.navigate(['inicio'])
             return false 
           }
         })

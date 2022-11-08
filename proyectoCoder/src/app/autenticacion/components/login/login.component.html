@@ -1,27 +1,40 @@
-<section class="container"> 
-   
-    <mat-card>
-        <h2 class="text-center">Iniciar sesión</h2>
-        <form action="" [formGroup]="form" (ngSubmit)="login()" autocomplete="off">
-            
-                    <mat-form-field appearance="fill" class="ancho">
-                        <mat-label> Nombre </mat-label>
-                        <input matInput formControlName="nombre">
-                      </mat-form-field>
-              
-            
-                    <mat-form-field appearance="fill" class="ancho">
-                        <mat-label> Contraseña </mat-label>
-                        <input matInput formControlName="password" type="password">
-                        </mat-form-field>
+<body>
+    
 
-                    
-            <mat-slide-toggle formControlName="admin">Admin</mat-slide-toggle>
-            <div class="btn">
-            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Ingresar</button>
-            </div>
-        </form>
-    </mat-card>
 
-</section>
+<div class="row">
+    <div class="col-sm-4 col-md-8">
+        <img src="./assets/mon.jpg" alt="monster" width="1100"></div>
+    <div class="col-sm-4">
+        <mat-card>
+            <h2 class="text-center">Iniciar sesión</h2>
+           
+            <form action="" [formGroup]="form" (ngSubmit)="login()" autocomplete="off" >
+                
+                        <mat-form-field appearance="fill" class="ancho">
+                            <mat-label> Nombre </mat-label>
+                            <input matInput formControlName="nombre">
+                          </mat-form-field>
+                  
+                
+                        <mat-form-field appearance="fill" class="ancho">
+                            <mat-label> Contraseña </mat-label>
+                            <input matInput formControlName="password" type="password">
+                            </mat-form-field>
+    
+                        
+                <mat-slide-toggle formControlName="admin">Admin</mat-slide-toggle>
+                <div class="btn">
+                <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Ingresar</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+  </div>
+
+</body>
+
+    
+
+
 

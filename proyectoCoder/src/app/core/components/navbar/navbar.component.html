@@ -1,5 +1,5 @@
-<header> 
-  <mat-toolbar>
+<header *ngIf="sesion$ | async as sesion "> 
+  <mat-toolbar *ngIf="sesion.sesionActiva">
     <span><img src="./assets/monsters-university.png" alt="" width="100" routerLink="inicio" id="logo"></span>
      <span class="example-spacer"></span> 
 
@@ -12,28 +12,28 @@
             <button mat-button  [matMenuTriggerFor]="cursos" class="navbar"><mat-icon>computer</mat-icon> Cursos</button>
             <mat-menu #cursos="matMenu" xPosition="after">
               <button mat-menu-item routerLink="cursos">Inscribirse</button>
-              <button mat-menu-item routerLink="cursos/editarcurso">Editar cursos</button>
+              <button mat-menu-item routerLink="cursos/editar">Editar cursos</button>
               <button mat-menu-item routerLink="cursos/misincripciones">Mis inscripciones</button>
               </mat-menu> 
 
               <!-- crear, eliminar -->
-              <button mat-button [matMenuTriggerFor]="admin" class="navbar" matTooltip="USUARIOS"><mat-icon>swap_vert</mat-icon></button>
-              <mat-menu #admin="matMenu" xPosition="after">
-                 <button mat-menu-item routerLink="estudiantes/crearusuario">Crear usuario</button>
-                 <button mat-menu-item routerLink="estudiantes/editarestudiante">Editar usuario</button>
+              <button mat-button *ngIf="sesion.usuarioActivo?.admin" [matMenuTriggerFor]="admin" class="navbar" matTooltip="USUARIOS"><mat-icon>swap_vert</mat-icon></button>
+              <mat-menu #admin="matMenu" xPosition="after" >
+                 <button mat-menu-item routerLink="estudiantes/crear">Crear usuario</button>
+                 <button mat-menu-item routerLink="estudiantes/editar">Editar estudiante</button>
            </mat-menu>
   
             <!-- estudiantes -->
              <button mat-button [matMenuTriggerFor]="estudiantes" class="navbar" matTooltip="ESTUDIANTES" ><mat-icon>face</mat-icon></button>
             <mat-menu #estudiantes="matMenu" xPosition="after">
               <button mat-menu-item routerLink="estudiantes" routerLink="estudiantes">Estudiantes</button>
-              <button mat-menu-item routerLink="hermandades" routerLink="hermandades">Hermandades</button>
+              <button mat-menu-item  routerLink="estudiantes/hermandades">Hermandades</button>
               </mat-menu> 
 
           <!-- <--  iniciar sesion, contacto -->
      <button mat-button [matMenuTriggerFor]="settings" class="navbar" matTooltip="OPCIONES"><mat-icon>settings</mat-icon></button>
            <mat-menu #settings="matMenu" xPosition="after">
-              <button mat-menu-item>Iniciar sesión</button>
+              <button mat-menu-item routerLink="login">Iniciar sesión</button>
               <button mat-button class="navbar" routerLink="formulario">Contacto</button>
         </mat-menu>
 
