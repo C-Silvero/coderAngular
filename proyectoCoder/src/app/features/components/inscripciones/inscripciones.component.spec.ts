@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { InscripcionesComponent } from './inscripciones.component';
 
@@ -20,4 +21,6 @@ describe('InscripcionesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
 });

@@ -35,6 +35,9 @@ export class InscripcionesComponent implements OnInit {
     this.routes.navigate(['cursos/editar', curso]);
   }
   
+  verDetalle( curso: Inscripciones) {
+    this.routes.navigate(['cursos/detalles', curso])
+  }
   
 
 }

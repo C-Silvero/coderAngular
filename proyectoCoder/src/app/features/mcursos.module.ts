@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { InscripcionesComponent } from './components/inscripciones/inscripciones.component';
 import { EditarcursoComponent } from './components/editarcurso/editarcurso.component';
 import { MisincripcionesComponent } from './components/misincripciones/misincripciones.component';
+import { DetallesComponent } from './components/detalles/detalles.component';
 
 
 
@@ -14,6 +15,7 @@ import { MisincripcionesComponent } from './components/misincripciones/misincrip
     InscripcionesComponent,
     EditarcursoComponent,
     MisincripcionesComponent,
+    DetallesComponent,
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Estudiante, Usuario } from 'src/app/models/estudiantes';
+import { Estudiante } from 'src/app/models/estudiantes';
 import { EstudiantesService } from '../../services/estudiantes.service';
 import Swal from 'sweetalert2'
 @Component({
@@ -11,10 +11,7 @@ import Swal from 'sweetalert2'
 })
 export class EditarEstudianteComponent implements OnInit {
 
-  usuario: Usuario[] = [
-    {id: 37,  img: '', nombre: '', apellido: ''}
-  ]
-
+  
   form!: FormGroup
 
   constructor(

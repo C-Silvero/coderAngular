@@ -1,0 +1,26 @@
+
+<!-- Cards with media area -->
+<section class="container"> 
+    
+    <mat-card >
+        <mat-card-title-group>
+            <mat-card-title>{{curso.nombre}}</mat-card-title>
+            <mat-card-subtitle>{{curso.contenido}}</mat-card-subtitle>
+      <img mat-card-sm-image src="{{curso.img}}" >
+    </mat-card-title-group>
+    <!-- retorna un contenido diferente según el curso -->
+    <mat-card-content *ngIf="curso.nombre === 'Examen Final'">
+        El examen final consiste en un simulacro de sustos en que los estudiantes deberán asustar a un robot. El susto será medido por el tanque de gritos. 
+    </mat-card-content>
+    <mat-card-content *ngIf="curso.nombre === 'Gimnasio'">
+        El gimnasio permanece abierto todo el año de 8am a 11pm.
+    </mat-card-content>
+    <mat-card-content *ngIf="curso.nombre === 'Construcción de puertas'">
+        Si deseas construir puertas para acceder al mundo humano, este es tu curso. Puedes obtener un ingreso por objetivos.
+    </mat-card-content>
+    <mat-card-content *ngIf="curso.nombre === 'Sustolimpiadas'">
+        Las Sustolimpiadas consisten en una serie de pruebas, cuyos ganadores serán reconocidos como los monstruos más aterradores de la universidad.
+    </mat-card-content>
+
+</mat-card>
+</section>

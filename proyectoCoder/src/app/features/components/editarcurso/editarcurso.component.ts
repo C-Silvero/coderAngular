@@ -33,6 +33,9 @@ export class EditarcursoComponent implements OnInit {
         contenido: parametros.get('contenido') || '',
       }
 
+      console.log(this.curso);
+      
+
       this.form = new FormGroup({
         nombre: new FormControl(this.curso.nombre, [Validators.required]),
         fecha: new FormControl(this.curso.fecha),
@@ -55,8 +58,10 @@ export class EditarcursoComponent implements OnInit {
     this.cursoService.editarCurso(c);
 
     this.routes.navigate(['cursos'])
+    this.cursoService.obtenerCursos()
+    console.log(c);
    }
-
+   
 
 }
 

@@ -33,6 +33,10 @@ export class CursoService {
     this.http.put<Inscripciones>(`https://6361713367d3b7a0a6c6d7c9.mockapi.io/${curso.nombre}`, curso).subscribe(console.log);
   }
 
+  verDetalle(curso: Inscripciones) {
+    this.http.put<Inscripciones>(`https://6361713367d3b7a0a6c6d7c9.mockapi.io/${curso.nombre}`, curso).subscribe(console.log);
+  }
+
   private manejarError(error: HttpErrorResponse){
     if(error.error instanceof ErrorEvent){
       console.warn('Error del lado del cliente', error.error.message);

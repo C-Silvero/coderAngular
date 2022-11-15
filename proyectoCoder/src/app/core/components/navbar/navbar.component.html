@@ -1,42 +1,69 @@
 <header *ngIf="sesion$ | async as sesion "> 
-  <mat-toolbar *ngIf="sesion.sesionActiva">
-    <span><img src="./assets/monsters-university.png" alt="" width="100" routerLink="inicio" id="logo"></span>
-     <span class="example-spacer"></span> 
+<nav class="navbar navbar-light bg-light fixed-top" *ngIf="sesion.sesionActiva">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"> 
+        
+      </span>
+      <span class="logo">  <img src="./assets/monsters-university.png" alt="" width="90" routerLink="inicio" id="logo"> </span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            
+            <a class="nav-link active" aria-current="page" routerLink="inicio">
+              <mat-icon>home</mat-icon> Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="cursos">
+              <mat-icon>computer</mat-icon> Cursos</a>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="estudiantes">
+              <mat-icon>face</mat-icon> Estudiantes</a>
+            
+          </li>
+          <li class="nav-item" *ngIf="sesion.usuarioActivo?.admin">
+            <a class="nav-link active" aria-current="page" routerLink="estudiantes/editar">
+              <mat-icon>build</mat-icon> Editar estudiante</a>
+            
+          </li>
 
-        <!-- inicio -->
-            <button mat-button class="navbar" routerLink="inicio">
-              <mat-icon matTooltip="INICIO">home</mat-icon>
-            </button>
-             
-            <!-- cursos -->
-            <button mat-button  [matMenuTriggerFor]="cursos" class="navbar"><mat-icon>computer</mat-icon> Cursos</button>
-            <mat-menu #cursos="matMenu" xPosition="after">
-              <button mat-menu-item routerLink="cursos">Inscribirse</button>
-              <button mat-menu-item routerLink="cursos/editar">Editar cursos</button>
-              <button mat-menu-item routerLink="cursos/misincripciones">Mis inscripciones</button>
-              </mat-menu> 
+          <li class="nav-item" *ngIf="sesion.usuarioActivo?.admin">
+            <a class="nav-link active" aria-current="page" routerLink="estudiantes/crear">
+              <mat-icon>add_circle_outline</mat-icon> Crear estudiante</a>
+            
+          </li>
 
-              <!-- crear, eliminar -->
-              <button mat-button *ngIf="sesion.usuarioActivo?.admin" [matMenuTriggerFor]="admin" class="navbar" matTooltip="USUARIOS"><mat-icon>swap_vert</mat-icon></button>
-              <mat-menu #admin="matMenu" xPosition="after" >
-                 <button mat-menu-item routerLink="estudiantes/crear">Crear usuario</button>
-                 <button mat-menu-item routerLink="estudiantes/editar">Editar estudiante</button>
-           </mat-menu>
-  
-            <!-- estudiantes -->
-             <button mat-button [matMenuTriggerFor]="estudiantes" class="navbar" matTooltip="ESTUDIANTES" ><mat-icon>face</mat-icon></button>
-            <mat-menu #estudiantes="matMenu" xPosition="after">
-              <button mat-menu-item routerLink="estudiantes" routerLink="estudiantes">Estudiantes</button>
-              <button mat-menu-item  routerLink="estudiantes/hermandades">Hermandades</button>
-              </mat-menu> 
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="estudiantes/hermandades">
+              <mat-icon>whatshot</mat-icon> Hermandades</a>
+            
+          </li>
 
-          <!-- <--  iniciar sesion, contacto -->
-     <button mat-button [matMenuTriggerFor]="settings" class="navbar" matTooltip="OPCIONES"><mat-icon>settings</mat-icon></button>
-           <mat-menu #settings="matMenu" xPosition="after">
-              <button mat-menu-item routerLink="login">Iniciar sesión</button>
-              <button mat-button class="navbar" routerLink="formulario">Contacto</button>
-        </mat-menu>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="login">
+              <mat-icon>arrow_forward</mat-icon> Iniciar sesión</a>
+            
+          </li>
 
-      
-    </mat-toolbar>
-</header> 
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="formulario">
+              <mat-icon>school</mat-icon> Contacto</a>
+            
+          </li>
+
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+</header>
