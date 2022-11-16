@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter, from, Observable } from 'rxjs';
+import { SesionService } from 'src/app/core/services/sesion.service';
 import { Inscripciones } from 'src/app/models/inscripciones'
+import { Sesion } from 'src/app/models/sesion';
 import { CursoService } from '../../services/curso.service';
 
 @Component({
@@ -10,6 +12,9 @@ import { CursoService } from '../../services/curso.service';
   styleUrls: ['./inscripciones.component.css']
 })
 export class InscripcionesComponent implements OnInit {
+  sesion$!: Observable<Sesion>
+  
+
 
   filtro : string = '';
 
@@ -19,14 +24,15 @@ export class InscripcionesComponent implements OnInit {
 
   constructor(
     private cursoService: CursoService,
-    private routes: Router
+    private routes: Router,
+    private sesionService: SesionService
   ) { 
     console.log('cursos works');
 
   }
   
   ngOnInit(): void {
-
+    this.sesion$ = this.sesionService.obtenerSesion()
     this.cursos$ = this.cursoService.obtenerCursos() 
   }
 
@@ -39,5 +45,14 @@ export class InscripcionesComponent implements OnInit {
     this.routes.navigate(['cursos/detalles', curso])
   }
   
+  inscribirse( curso: Inscripciones) {
+    console.log(curso);
+  }
+
+  eliminarCurso(id: number) {
+    this.cursoService.eliminarCurso(id)
+    this.cursos$ = this.cursoService.obtenerCursos()
+  }
+
 
 }

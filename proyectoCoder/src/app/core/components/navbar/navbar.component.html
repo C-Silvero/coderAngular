@@ -25,6 +25,17 @@
               <mat-icon>computer</mat-icon> Cursos</a>
             
           </li>
+          <li class="nav-item" *ngIf="sesion.usuarioActivo?.admin">
+            <a class="nav-link active" aria-current="page" routerLink="cursos/agregar-curso">
+              <mat-icon>computer</mat-icon> Agregar Curso</a>
+            
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="cursos/misincripciones">
+              <mat-icon>computer</mat-icon>Mis cursos</a>
+            
+          </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="estudiantes">
               <mat-icon>face</mat-icon> Estudiantes</a>

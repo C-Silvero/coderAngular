@@ -27,6 +27,7 @@ export class EditarcursoComponent implements OnInit {
       console.log(parametros)
 
       this.curso = {
+        id: parseInt(parametros.get('id') || '0'),
         nombre: parametros.get('nombre') || '',
         img: parametros.get('img') || '',
         fecha: parametros.get('fecha') || '',
@@ -37,6 +38,7 @@ export class EditarcursoComponent implements OnInit {
       
 
       this.form = new FormGroup({
+        id: new FormControl(this.curso.id),
         nombre: new FormControl(this.curso.nombre, [Validators.required]),
         fecha: new FormControl(this.curso.fecha),
         contenido: new FormControl(this.curso.contenido),
@@ -49,16 +51,15 @@ export class EditarcursoComponent implements OnInit {
   editarCurso(){
 
     const c: Inscripciones = {
+      id: this.form.value.id,
       nombre: this.form.value.nombre,
       contenido: this.form.value.contenido,
       fecha: this.form.value.fecha,
       img: this.form.value.img,
     }
-
-    this.cursoService.editarCurso(c);
-
+    this.cursoService.editarCurso(c)
     this.routes.navigate(['cursos'])
-    this.cursoService.obtenerCursos()
+    
     console.log(c);
    }
    

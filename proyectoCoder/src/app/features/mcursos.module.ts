@@ -5,8 +5,10 @@ import { McursosRoutingModule } from './mcursos-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { InscripcionesComponent } from './components/inscripciones/inscripciones.component';
 import { EditarcursoComponent } from './components/editarcurso/editarcurso.component';
-import { MisincripcionesComponent } from './components/misincripciones/misincripciones.component';
+
 import { DetallesComponent } from './components/detalles/detalles.component';
+import { CursosinscriptosComponent } from './components/cursosinscriptos/cursosinscriptos.component';
+import { AgregarCursoComponent } from './components/agregar-curso/agregar-curso.component';
 
 
 
@@ -14,8 +16,9 @@ import { DetallesComponent } from './components/detalles/detalles.component';
   declarations: [
     InscripcionesComponent,
     EditarcursoComponent,
-    MisincripcionesComponent,
     DetallesComponent,
+    CursosinscriptosComponent,
+    AgregarCursoComponent,
   ],
   imports: [
     CommonModule,

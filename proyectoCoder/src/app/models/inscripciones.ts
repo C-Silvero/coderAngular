@@ -1,5 +1,6 @@
 export interface Inscripciones 
   { 
+    id: number,
     img: string;
     nombre: string;
     fecha: string;

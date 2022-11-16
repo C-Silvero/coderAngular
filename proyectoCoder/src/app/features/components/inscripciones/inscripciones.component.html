@@ -1,26 +1,36 @@
 <br>
-<section class="container">
-    
+<section class="container"  *ngIf="sesion$ | async as sesion ">
     <div class="row">
         <div class="col-md-5" *ngFor="let curso of cursos$ | async"> 
+            
     <mat-card >
         <mat-card-title >{{curso.nombre}}</mat-card-title>
         <mat-card-subtitle>{{curso.contenido}}</mat-card-subtitle>
         <img mat-card-image src="{{curso.img}}" alt="">
         <mat-card-content>Fecha: {{curso.fecha }}</mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button color="primary">Inscribirse</button>
+        <mat-card-actions >
+            <button mat-raised-button color="primary" (click)="inscribirse(curso)">Inscribirse</button>
+
+             
 
             <!-- compartir -->
             <button mat-button>Compartir 	<mat-icon id="share">share</mat-icon></button>
-            <!-- editar -->
-            <button mat-icon-button color="primary" (click)="editarCurso(curso)">
-                <mat-icon matTooltip="EDITAR"> edit</mat-icon>
-            </button>
+
             <!-- ver detalle -->
             <button mat-icon-button color="primary" (click)="verDetalle(curso)">
-                <mat-icon matTooltip="VER DETALLES">remove_red_eye</mat-icon>
+                <mat-icon matTooltip="VER DETALLES" >remove_red_eye</mat-icon>
             </button>
+            
+            <!-- editar -->
+            <button mat-icon-button color="primary" (click)="editarCurso(curso)">
+                <mat-icon matTooltip="EDITAR" *ngIf="sesion.usuarioActivo?.admin"> edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="primary" (click)="eliminarCurso(curso.id)">
+                <mat-icon matTooltip="ELIMINAR" *ngIf="sesion.usuarioActivo?.admin"> delete</mat-icon>
+            </button>
+
+           
         </mat-card-actions>
     </mat-card>
     </div>
