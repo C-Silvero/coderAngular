@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SesionService } from '../../../core/services/sesion.service';
-import Swal from 'sweetalert2'; 'sweetalert2'
+import Swal from 'sweetalert2';import { UsuarioLogin } from 'src/app/models/usuario';
+import { Store } from '@ngrx/store';
+import { Sesion } from 'src/app/models/sesion';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private sesionService: SesionService,
-    private routes: Router
+    private routes: Router,
   ) { 
     this.form = new FormGroup({
       nombre: new FormControl('Carlos', Validators.required),
@@ -27,10 +29,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
   
   login(){
-
     if ( this.form.value.nombre != 'Carlos') {
       alert('error')
     } else {
@@ -38,10 +40,7 @@ export class LoginComponent implements OnInit {
       console.log(this.form);
       this.routes.navigate(['inicio'])
     }
-
     
-
-
   }
 
 

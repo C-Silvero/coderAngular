@@ -2,8 +2,10 @@
     margin-top: 10rem;
 }
 
-.ancho {
-    width: 80%;
+
+.boton {
+    display: flex;
+    justify-content: center;
 }
 
 table {

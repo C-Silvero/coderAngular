@@ -17,6 +17,9 @@
     width: 300px;
     transform: none;
 }
+.navbar-light .navbar-nav .nav-link.active:hover {
+    color:rgb(53, 117, 255)
+}
 
 .material-icons {
     line-height: 1.27;

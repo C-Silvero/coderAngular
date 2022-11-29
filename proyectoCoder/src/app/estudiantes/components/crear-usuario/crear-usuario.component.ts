@@ -4,7 +4,7 @@ import { MatTable } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/estudiantes';
 import { EstudiantesService } from "../../services/estudiantes.service";
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-crear-usuario',
   templateUrl: './crear-usuario.component.html',
@@ -49,6 +49,13 @@ export class CrearUsuarioComponent implements OnInit {
         nombre : this.form.value.nombre,
         apellido : this.form.value.apellido,
       }
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Estudiante agregado',
+        showConfirmButton: false,
+        timer: 1000
+      })
       this.usuarioService.agregarUsuario(estudiante)
       this.router.navigate(['/estudiantes'])
     }

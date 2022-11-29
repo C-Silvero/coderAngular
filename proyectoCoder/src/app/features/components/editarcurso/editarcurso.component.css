@@ -2,3 +2,7 @@
 .container {
     margin-top: 5rem;
 }
+.boton {
+    display: flex;
+    justify-content: center;
+}

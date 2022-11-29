@@ -6,41 +6,44 @@
 
     <mat-card >
         <form action="" [formGroup]="form" (ngSubmit)="agregarCurso()">
-            <mat-grid-list cols="5" rowHeight="80px">
+            <mat-grid-list cols="4" rowHeight="80px">
                 
-                <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <mat-grid-tile [colspan]="2" [rowspan]="2">
                     <mat-form-field appearance="fill" class="ancho">
                         <mat-label>Imagen</mat-label>
                         <input matInput formControlName="img">
                       </mat-form-field>
                 </mat-grid-tile>
 
-                <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
+                <mat-grid-tile [colspan]="2" [rowspan]="2" class="ancho">
                     <mat-form-field appearance="fill" class="ancho">
                         <mat-label>Nombre</mat-label>
                         <input matInput formControlName="nombre">
                       </mat-form-field>
 
                 </mat-grid-tile>
-                <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
+                <mat-grid-tile [colspan]="2" [rowspan]="2" class="ancho">
                     <mat-form-field appearance="fill" class="ancho">
                         <mat-label>Contenido</mat-label>
                         <input matInput formControlName="contenido">
                       </mat-form-field>
                 </mat-grid-tile>
 
-                <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
+                <mat-grid-tile [colspan]="2" [rowspan]="2" class="ancho">
                     <mat-form-field appearance="fill" class="ancho">
                         <mat-label>Fecha</mat-label>
                         <input matInput formControlName="fecha">
                       </mat-form-field>
                 </mat-grid-tile>
 
-                <mat-grid-tile [colspan]="1" [rowspan]="1" class="ancho">
-                    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Agregar</button>
-                </mat-grid-tile>
-
             </mat-grid-list>
+
+            <div class="boton"> 
+                
+                <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Agregar</button>
+                
+            </div>
+
         </form>
     </mat-card>
 

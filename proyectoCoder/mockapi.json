@@ -18,5 +18,12 @@
     "nombre": "Gimnasio", 
     "fecha": "(2022, 2, 1)",
      "contenido": "Entrenáte para potenciar tu fuerza",
-     "id": "4" }
+     "id": "4" },
+
+
+     {"id": 1, "nombre": "Mike", "password": "mike55", "admin": false},
+     {"id": 2, "nombre": "James", "password": "james65", "admin": false},
+     {"id": 3, "nombre": "Randall", "password": "randall75", "admin": false},
+     {"id": 4, "nombre": "Don Carlton", "password": "carlton95", "admin": false}
+     
 ]

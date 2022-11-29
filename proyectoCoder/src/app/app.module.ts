@@ -7,6 +7,10 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { environment } from '../environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './features/state/cursos.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,10 @@ import { FormularioComponent } from './components/formulario/formulario.componen
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule,
+    StoreModule.forRoot(reducer, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]

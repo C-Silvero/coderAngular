@@ -1,7 +1,10 @@
 <br>
 <section class="container"  *ngIf="sesion$ | async as sesion ">
-    <div class="row">
-        <div class="col-md-5" *ngFor="let curso of cursos$ | async"> 
+
+    <h1 class="text-center" *ngIf="(cargando$ | async)">Cargando...</h1>
+
+    <div class="row" *ngIf="!(cargando$ | async)">
+        <div class="col-md-5"  *ngFor="let curso of cursos$ | async"> 
             
     <mat-card >
         <mat-card-title >{{curso.nombre}}</mat-card-title>
@@ -14,7 +17,7 @@
              
 
             <!-- compartir -->
-            <button mat-button>Compartir 	<mat-icon id="share">share</mat-icon></button>
+            <button mat-button>Compartir<mat-icon id="share">share</mat-icon></button>
 
             <!-- ver detalle -->
             <button mat-icon-button color="primary" (click)="verDetalle(curso)">

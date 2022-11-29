@@ -1,3 +1,7 @@
 .container {
     margin-top: 8rem;
 }
+.boton {
+    display: flex;
+    justify-content: center;
+}

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MaterialModule} from '../material.module';
 import { FondoComponent } from './components/fondo/fondo.component';
+import { SesionService } from './services/sesion.service';
+
 
 
 
@@ -12,8 +14,11 @@ import { FondoComponent } from './components/fondo/fondo.component';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
   ], 
+  providers: [
+    SesionService,
+  ],
   exports: [
     CommonModule,
     MaterialModule
