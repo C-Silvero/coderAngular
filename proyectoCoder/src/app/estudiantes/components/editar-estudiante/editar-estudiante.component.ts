@@ -25,7 +25,7 @@ export class EditarEstudianteComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((parametros) => {
-      console.log(parametros);
+      
       this.form = this.fb.group({
         id: new FormControl (parametros.get('id') , [Validators.required]),
         img: new FormControl (parametros.get('img'), [Validators.required]),
@@ -33,7 +33,7 @@ export class EditarEstudianteComponent implements OnInit {
         apellido: new FormControl (parametros.get('apellido'), [Validators.required])
       })
     })
-    console.log(this.form);
+    
     
   }
 
@@ -47,7 +47,7 @@ export class EditarEstudianteComponent implements OnInit {
       nombre : this.form.value.nombre,
       apellido : this.form.value.apellido,
     }
-    console.log(estudiante);
+    
     Swal.fire({
       position: 'top-end',
       icon: 'success',

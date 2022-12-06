@@ -24,7 +24,7 @@ export class EditarcursoComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((parametros) => {
-      console.log(parametros)
+      
 
       this.curso = {
         id: parseInt(parametros.get('id') || '0'),
@@ -34,7 +34,7 @@ export class EditarcursoComponent implements OnInit {
         contenido: parametros.get('contenido') || '',
       }
 
-      console.log(this.curso);
+      
       
 
       this.form = new FormGroup({
@@ -59,7 +59,7 @@ export class EditarcursoComponent implements OnInit {
     }
     this.cursoService.editarCurso(c);
     this.routes.navigate(['cursos']);
-    console.log(c);
+    
    }
    
 

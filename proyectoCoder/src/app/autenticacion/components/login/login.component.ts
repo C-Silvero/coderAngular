@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       alert('error')
     } else {
       this.sesionService.login(this.form.value.nombre, this.form.value.password, this.form.value.admin)
-      console.log(this.form);
+      
       this.routes.navigate(['inicio'])
     }
     

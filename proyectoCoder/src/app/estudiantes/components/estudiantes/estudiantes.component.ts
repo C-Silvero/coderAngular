@@ -58,7 +58,7 @@ export class EstudiantesComponent implements OnInit {
         Swal.fire('Listo!', 'Se ha eliminado correctamente', 'success')
       } 
     })
-    console.log(index);
+   
     
   }
 

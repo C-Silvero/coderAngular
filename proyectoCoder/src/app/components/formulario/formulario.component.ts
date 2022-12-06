@@ -24,7 +24,7 @@ export class FormularioComponent implements OnInit {
   }
 
   enviarFormulario(): void {
-    console.log(this.formulario);
+    
     
   }
 }

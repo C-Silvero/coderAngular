@@ -34,7 +34,7 @@ export class InscripcionesComponent implements OnInit, OnDestroy {
     private sesionService: SesionService,
     private store: Store<InscripcionesState>
   ) { 
-    console.log('cursos works');
+    
     this.cursos$ =  this.store.select(selectCursos); 
     this.cargando$ = this.store.select(selectStateCargando);
   }
@@ -68,7 +68,7 @@ export class InscripcionesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.suscripcion.unsubscribe()
-    console.log('cursos disuelto');
+    
   }
 
   editarCurso(curso: Inscripciones){

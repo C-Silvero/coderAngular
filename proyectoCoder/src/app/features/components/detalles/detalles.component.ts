@@ -22,7 +22,7 @@ export class DetallesComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((parametros) => {
-      console.log(parametros);
+      
       this.curso = {
         id: parseInt(parametros.get('id') || '0'), 
         nombre: parametros.get('nombre') || '',
@@ -30,7 +30,7 @@ export class DetallesComponent implements OnInit {
         fecha: parametros.get('fecha') || '',
         contenido: parametros.get('contenido') || '',
       }
-      console.log(this.curso);
+      
     })
     
   } 

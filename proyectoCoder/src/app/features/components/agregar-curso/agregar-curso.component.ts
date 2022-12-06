@@ -39,7 +39,7 @@ export class AgregarCursoComponent implements OnInit {
       contenido: this.form.value.contenido,
       fecha: this.form.value.fecha,
     }
-    console.log(curso);
+    
     this.cursoService.agregarCurso(curso);
     this.routes.navigate(['cursos'])
     
