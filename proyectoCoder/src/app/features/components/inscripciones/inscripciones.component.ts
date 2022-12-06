@@ -78,14 +78,18 @@ export class InscripcionesComponent implements OnInit, OnDestroy {
   verDetalle( curso: Inscripciones) {
     this.routes.navigate(['cursos/detalles', curso])
   }
-  
-  inscribirse( curso: Inscripciones) {
-    console.log(curso);
-  }
 
-  eliminarCurso(id: number) {
-   
+  
+  eliminarCurso(id: number ) {
+    Swal.fire(
+      'Curso eliminado',
+      'Recargue el sitio para verificar los cambios',
+      'success'
+    )
+   this.cursoService.eliminarCurso(id)
+   this.cursos$ = this.cursoService.obtenerCursos()
   }
+  
 
 
 }

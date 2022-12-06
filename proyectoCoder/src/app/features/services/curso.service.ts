@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, delay, Observable, of, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, delay, Observable, of, pipe, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment'
 import { Inscripciones } from '../../models/inscripciones'
 
@@ -21,12 +21,6 @@ export class CursoService {
     )
   }
     
-
-   editarCurso(curso: Inscripciones){
-    this.http.put<Inscripciones>(`https://6361713367d3b7a0a6c6d7c9.mockapi.io/api/${curso.nombre}`, curso).subscribe(console.log);
-    console.log(`modificando ${curso.nombre}`);
-    
-  }
 
   verDetalle(curso: Inscripciones) {
     this.http.put<Inscripciones>(`https://6361713367d3b7a0a6c6d7c9.mockapi.io/${curso.nombre}`, curso).subscribe(console.log);
@@ -50,13 +44,17 @@ export class CursoService {
     }).subscribe(console.log)
   }
 
-  inscribirse( curso: Inscripciones) {
-    console.log(curso);
+  editarCurso(curso: Inscripciones){
+    this.http.put<Inscripciones>(`https://6361713367d3b7a0a6c6d7c9.mockapi.io/api/${curso.id}`, curso).pipe(
+      catchError(this.manejarError)
+    ).subscribe(console.log);
   }
   
-  // eliminarCurso( curso: Inscripciones) {
-  //   this.http.delete<Inscripciones>(`https://6361713367d3b7a0a6c6d7c9.mockapi.io/${curso.nombre}`, curso)
-  // }
+  eliminarCurso(id: number) {
+    this.http.delete<Inscripciones>(`https://6361713367d3b7a0a6c6d7c9.mockapi.io/api/${id}`).pipe(
+      catchError(this.manejarError)
+    ).subscribe(console.log);
+  }
   
 
 }

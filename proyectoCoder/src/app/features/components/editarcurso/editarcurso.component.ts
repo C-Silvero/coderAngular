@@ -50,16 +50,15 @@ export class EditarcursoComponent implements OnInit {
 
   editarCurso(){
 
-    const c: Inscripciones = {
+    let c: Inscripciones = {
       id: this.form.value.id,
       nombre: this.form.value.nombre,
       contenido: this.form.value.contenido,
       fecha: this.form.value.fecha,
       img: this.form.value.img,
     }
-    this.cursoService.editarCurso(c)
-    this.routes.navigate(['cursos'])
-    
+    this.cursoService.editarCurso(c);
+    this.routes.navigate(['cursos']);
     console.log(c);
    }
    

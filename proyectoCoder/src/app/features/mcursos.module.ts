@@ -6,7 +6,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { InscripcionesComponent } from './components/inscripciones/inscripciones.component';
 import { EditarcursoComponent } from './components/editarcurso/editarcurso.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
-import { CursosinscriptosComponent } from './components/cursosinscriptos/cursosinscriptos.component';
 import { AgregarCursoComponent } from './components/agregar-curso/agregar-curso.component';
 import { StoreModule } from '@ngrx/store';
 import { cursosFeatureKey, reducer } from './state/cursos.reducer';
@@ -17,7 +16,6 @@ import { cursosFeatureKey, reducer } from './state/cursos.reducer';
     InscripcionesComponent,
     EditarcursoComponent,
     DetallesComponent,
-    CursosinscriptosComponent,
     AgregarCursoComponent,
   ],
   imports: [
