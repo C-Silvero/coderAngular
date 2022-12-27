@@ -16,7 +16,7 @@ export class CursoService {
   ) {}
 
    obtenerCursos(): Observable<Inscripciones[]> {
-    return this.http.get<Inscripciones[]>(`${environment.api}/api`).pipe(
+    return this.http.get<Inscripciones[]>(`https://6361713367d3b7a0a6c6d7c9.mockapi.io/api`).pipe(
       delay(1500)
     )
   }

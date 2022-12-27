@@ -6,7 +6,9 @@ img {
     max-width: 70px;
     max-height: 70px;
 }
-
+.row {
+    margin-top: 60px;
+}
 table {
     width: 70%;
     margin-bottom: 4rem;
